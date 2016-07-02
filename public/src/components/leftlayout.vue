@@ -26,5 +26,7 @@
 .left-container{
   background: #ffffff;
   min-height: 800px;
+  padding:34px;
+  font-size: 18px;
 }
 </style>

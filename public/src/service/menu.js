@@ -11,17 +11,17 @@ const leftmenu = [{
 }, {
   id: 1,
   text: '分类',
-  url: '#/index/articlelist',
+  url: '#/index/catelist',
   level:'1'
 }, {
   id: 1,
   text: '标签',
-  url: '#/index/articlelist',
+  url: '#/index/biolist',
   level:'1'
 }, {
   id: 1,
   text: '关于',
-  url: '#/index/articlelist',
+  url: '#/index/about',
   level:'1'
 }
 ];

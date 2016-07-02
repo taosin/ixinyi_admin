@@ -8,6 +8,9 @@ import App from './App.vue';
 import filters from './filter';
 import index from './views/index.vue';
 import articlelist from './views/article_list.vue';
+import catelist from './views/cate_list.vue';
+import biolist from './views/bio_list.vue';
+import about from './views/about.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -39,6 +42,15 @@ router.map({
             },
             '/articlelist':{
                 component:articlelist
+            },
+            '/catelist':{
+                component:catelist
+            },
+            '/biolist':{
+                component:biolist
+            },
+            '/about':{
+                component:about
             }
             
         }

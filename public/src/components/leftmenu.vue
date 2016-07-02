@@ -1,7 +1,8 @@
 <template>
   <div  id="nav">
           <div class="left-top">
-              
+            <p>xinyixin</p>
+            <p>梦开始的地方</p>    
           </div>
            <ul class="left-menu" >
              <li v-for="menu in data" class="left-menu-div">
@@ -61,11 +62,7 @@
  };
  </script>
 <style type="text/css">
-.left-top{
-  height: 100px;
-  background: #000000;
-  width: 100%;
-}
+
 ul.left-menu{
   list-style: none;
   padding: 0;
@@ -98,6 +95,8 @@ ul.left-menu li a:hover{
   display: inline-block;
   width: 100%;
   height: 100%;
+  padding-left: 35px;
+  font-size: 14px;
 
 }
 .leftmenu-child{
@@ -109,7 +108,17 @@ ul.left-menu li a:hover{
 
 }
 .menu_selected{
-  background: red;
+  background: #f3f3f3;
+}
+.left-top{
+  height: 100px;
+  background: #000000;
+  width: 100%;
+  text-align: center;
+  padding:20px;
+}
+.left-top p{
+  color: #ffffff;
 }
 
 </style>

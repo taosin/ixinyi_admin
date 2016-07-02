@@ -1,0 +1,1 @@
+cate_list.vue
