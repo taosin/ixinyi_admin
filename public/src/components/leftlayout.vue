@@ -2,10 +2,10 @@
 
 <div class="container-fluid admin-panel">
   <div class="row">
-    <div class="col-lg-2 col-lg-offset-2 leftmenu-borad">
+    <div class="col-lg-2 col-md-2 col-xl-2 col-lg-offset-2 col-md-offset-2 col-xl-offset-2 leftmenu-borad">
       <slot name="left_menu"></slot>
     </div>
-    <div class="col-lg-7">
+    <div class="col-lg-7 col-md-7 col-xl-7">
       <div class="left-container" >
         <slot name="left_container"></slot>
       </div>

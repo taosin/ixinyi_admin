@@ -20,6 +20,11 @@ const leftmenu = [{
   level:'1'
 }, {
   id: 1,
+  text: '相册',
+  url: '#/index/photolist',
+  level:'1'
+}, {
+  id: 1,
   text: '关于',
   url: '#/index/about',
   level:'1'

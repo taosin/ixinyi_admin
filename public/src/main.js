@@ -10,6 +10,8 @@ import index from './views/index.vue';
 import articlelist from './views/article_list.vue';
 import catelist from './views/cate_list.vue';
 import biolist from './views/bio_list.vue';
+import photolist from './views/photo_list.vue';
+import photos from './views/photos.vue';
 import about from './views/about.vue';
 window.Vue = Vue;
 Vue.use(Router);
@@ -51,6 +53,12 @@ router.map({
             },
             '/about':{
                 component:about
+            },
+            '/photolist':{
+                component:photolist
+            },
+            '/photos':{
+                component:photos
             }
             
         }
