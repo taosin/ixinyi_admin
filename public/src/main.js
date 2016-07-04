@@ -8,6 +8,7 @@ import App from './App.vue';
 import filters from './filter';
 import index from './views/index.vue';
 import articlelist from './views/article_list.vue';
+import article from './views/article.vue';
 import catelist from './views/cate_list.vue';
 import biolist from './views/bio_list.vue';
 import photolist from './views/photo_list.vue';
@@ -44,6 +45,9 @@ router.map({
             },
             '/articlelist':{
                 component:articlelist
+            },
+            '/article':{
+                component:article
             },
             '/catelist':{
                 component:catelist

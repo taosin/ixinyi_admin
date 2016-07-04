@@ -3,13 +3,11 @@
         <div class="photo-header">
             目前共有{{photos.length}}个相册
         </div>
-        <div class="photo-list" v-for="photo in photos">
-            <a href="#/index/photos">
-            <div class="photo-main">
+        <div class="photo-list" v-for="photo in photos" @click="toPhotos">
+            <div class="photo-main"> 
                 <img v-bind:src="photo.img">
                 <p>{{photo.title}}</p>
             </div>
-            </a>
         </div>
         <div class="photo-footer"> 
 
@@ -37,7 +35,7 @@
         },
         methods:{
             toPhotos(){
-               const url = '/photos';
+               const url = './photos';
                window.router.go({
                  path: url
              }); 

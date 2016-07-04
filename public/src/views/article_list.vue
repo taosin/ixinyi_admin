@@ -8,7 +8,7 @@
 				{{article.content}}
 			</div>
 			<div class="article-footer">
-				<a class="common-a" href="">阅读全文</a>
+				<a class="common-a" @click="toArticle">阅读全文</a>
 			</div>
 		</div>
 	</div>
@@ -32,6 +32,12 @@
 		computed:{
 		},
 		methods:{
+			toArticle(){
+				const url ='./article';
+				window.router.go({
+					path: url
+				});
+			}
 		}
 	};
 </script>
