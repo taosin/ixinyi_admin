@@ -47,6 +47,9 @@ module.exports = {
         'prefer-template':0,
         'max-len':0,
         'keyword-spacing':0,
-        'prefer-rest-params':0
+        'prefer-rest-params':0,
+        'no-undef':0,
+        'prefer-arrow-callback':0
+
     }
 }
