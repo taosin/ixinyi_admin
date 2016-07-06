@@ -1,1 +1,5 @@
-cate_list.vue
+<template>
+	<div>
+		sss
+	</div>
+</template>

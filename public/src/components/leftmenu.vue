@@ -28,7 +28,7 @@
    data(){
       return{
           actived:false,
-          activeMenu:0
+          activeMenu:1
       };
    },
    compiled(){

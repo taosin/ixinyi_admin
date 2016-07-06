@@ -2,14 +2,13 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createLogger from 'vuex/logger';
 import menu from './modules/menu';
-import cusomer from './modules/cusomer';
-import provider from './modules/provider';
+import article from './modules/article';
 Vue.use(Vuex);
 Vue.config.debug = true;
 
 const debug = process.env.NODE_ENV !== 'production';
 
-const allModules = [menu, cusomer, provider];
+const allModules = [menu, article];
 const state = {};
 const mutations = {};
 allModules.forEach((module) => {

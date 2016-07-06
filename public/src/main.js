@@ -74,3 +74,4 @@ router.map({
 // })
 sync(store, router);
 router.start(App, '#app');
+   

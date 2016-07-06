@@ -14,6 +14,7 @@
 	</div>
 </template>
 <script>
+	import { getArticles } from './../service/article';
 	export default{
 		components:{
 		},
@@ -23,23 +24,23 @@
 			};
 		},
 		ready(){
-			const TestObject = AV.Object.extend('Articles');
-			const testObject = new TestObject();
-			// testObject.save({
-  	// 			title:'you are my first',
-  	// 			date:'2015-12-12',
-  	// 			content:'需求描述最近加班加点完成了一个上传文件的需求，听起来很简单想着也很简单，但是知易行难实际操作起来，还是遇到了很多问题，现在就来总结一下，使用vue来构建一个上传文件的页面中会遇到哪些问题，其中的一些问题也可能是用别的框架也会遇到的问题。' 
-			// 	}).then(function(object) {
-  	// 				alert(object.id);
-			// });
-			const query = new AV.Query('Articles');
-  			// 查询 priority 是 0 的 Todo
-  			query.find().then(function (results) {
-      				this.articles = results;
-  				}, function (error) {
-  			});
+			
+		},
+		vuex:{
+			getters:{
+				data: state => state.articles
+			},
+			actions:{
+				getArticles
+			}
+		},
+		created(){
+			this.getArticles();
 		},
 		watch:{
+			data(){
+				this.articles = this.data;
+			}
 		},
 		computed:{
 		},

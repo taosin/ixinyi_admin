@@ -5,6 +5,11 @@ exports.install = function install(Vue) {
         window.localStorage.setItem(key, value);
     }
 
+    function avInit(){
+        const appId = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
+        const appKey = 'pE0K2vCPp01I1DBS4NhcfOFo';
+        AV.init({ appId, appKey });
+    }
     // localstorage的查询
     function h5getValue(key) {
         return window.localStorage.getItem(key);
@@ -219,6 +224,11 @@ exports.install = function install(Vue) {
             get() {
                 return removeGS;
             }
+        },
+        $avInit:{
+            get() {
+                return avInit;
+            }
         }
     });
 
@@ -234,6 +244,4 @@ exports.install = function install(Vue) {
             return response;
         }
     });
-
-
 };
