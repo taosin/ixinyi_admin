@@ -2,10 +2,10 @@
 	<div class="articles-lists">
 		<div class="articles-list" v-for="article in articles">
 			<div class="article-header">
-				<h1>{{article.title}}</h1>
+				<h1>{{article._serverData.title}}</h1>
 			</div>
 			<div  class="article-content">
-				{{article.content}}
+				{{article._serverData.content}}
 			</div>
 			<div class="article-footer">
 				<a class="common-a" @click="toArticle">阅读全文</a>
@@ -40,6 +40,7 @@
 		watch:{
 			data(){
 				this.articles = this.data;
+				debugger;
 			}
 		},
 		computed:{

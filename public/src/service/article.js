@@ -6,10 +6,8 @@
 export const getArticles = ({
 	dispatch
 }) => {
-	debugger;
 	const query = new AV.Query('Articles');
   	query.find().then(function (results) {
-  		debugger;
       	dispatch('getArticles', results);
   		}, function (error) {
   	});
