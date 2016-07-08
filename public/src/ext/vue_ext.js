@@ -5,11 +5,6 @@ exports.install = function install(Vue) {
         window.localStorage.setItem(key, value);
     }
 
-    function avInit(){
-        const appId = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
-        const appKey = 'pE0K2vCPp01I1DBS4NhcfOFo';
-        AV.init({ appId, appKey });
-    }
     // localstorage的查询
     function h5getValue(key) {
         return window.localStorage.getItem(key);
@@ -18,7 +13,10 @@ exports.install = function install(Vue) {
     function h5remove(key) {
         window.localStorage.removeItem(key);
     }
-
+    // 替换字符串中指定位置的字符
+    function replaceStr(allstr, start, num, changestr){
+            return allstr.substring(0, start-1)+changestr+allstr.substring(start + num -1, allstr.length);
+    }
     // 获取cookie的值
     function getCookie(key) {
         if (document.cookie.length > 0) {
@@ -106,8 +104,7 @@ exports.install = function install(Vue) {
     function getSource(e){
         return e.target||e.srcElement;
     }
-
-    // 删除vuex get set
+    // 删除vuex get set 
     function removeGS(data){
         return JSON.parse(JSON.stringify(data));
     }
@@ -140,9 +137,34 @@ exports.install = function install(Vue) {
 
         return newObject;
     }
+    // 日期格式化
+    function formatDate(input, format) {
+        if (!input || !format) {
+            return '';
+        }
+        input = new Date(new Date(input).getTime() - 8 * 3600 * 1000);
+        const date = {
+            "M+": input.getMonth() + 1,
+            "d+": input.getDate(),
+            "h+": input.getHours(),
+            "m+": input.getMinutes(),
+            "s+": input.getSeconds(),
+            "q+": Math.floor((input.getMonth() + 3) / 3),
+            "S+": input.getMilliseconds()
+        };
+        if (/(y+)/i.test(format)) {
+            format = format.replace(RegExp.$1, (input.getFullYear() + '').substr(4 - RegExp.$1.length));
+        }
+        for (const k in date) {
+            if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length === 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+            }
+        }
+        return format;
+    }
+
     // 添加vue属性
     Object.defineProperties(Vue.prototype, {
-
         $deepCopy: {
             get() {
                 return deepCopy;
@@ -225,23 +247,45 @@ exports.install = function install(Vue) {
                 return removeGS;
             }
         },
-        $avInit:{
+        $formatDate: {
             get() {
-                return avInit;
+
+                return formatDate;
             }
-        }
+        },
+        $replaceStr: {
+            get() {
+
+                return replaceStr;
+            }
+        },
+
+
     });
 
     // 拦截器
     Vue.http.interceptors.push({
         request(request) {
+
             // TODO
-            request.url='http://ygg.ihades.me'+request.url;
+            request.url='http://localhost:8111/web/1.0'+request.url;
             return request;
         },
         response(response) {
             // TODO
-            return response;
+            if(response.status === 200){
+                return response.data;
+            }
         }
     });
+    // Vue.http.interceptors.push((request, next) => {
+    //     request.url='http://localhost:8111/web/1.0'+request.url;
+    //     next((response) => {
+    //         if(response.status === 200){
+    //             response = response.data;
+    //         }else{
+    //             alert('数据获取失败，错误码'+response.status)
+    //         }
+    //     })
+    // })
 };

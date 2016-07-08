@@ -49,12 +49,12 @@
         margin: 20px auto;
     }
     .photo-main img{
-        width: 200px;
+        width: 190px;
         margin-bottom: 10px;
 
     }
     .photo-list{
-        width: 220px;
+        width: 190px;
         float: left;
         text-align: center;
         margin:0 10px;

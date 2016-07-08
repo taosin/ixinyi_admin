@@ -3,6 +3,7 @@
 		<div class="articles-list" v-for="article in articles">
 			<div class="article-header">
 				<h1>{{article._serverData.title}}</h1>
+				<h6>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</h6>
 			</div>
 			<div  class="article-content">
 				{{article._serverData.content}}
@@ -40,7 +41,6 @@
 		watch:{
 			data(){
 				this.articles = this.data;
-				debugger;
 			}
 		},
 		computed:{
