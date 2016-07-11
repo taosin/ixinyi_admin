@@ -49,7 +49,8 @@ module.exports = {
         'keyword-spacing':0,
         'prefer-rest-params':0,
         'no-undef':0,
-        'prefer-arrow-callback':0
+        'prefer-arrow-callback':0,
+        'new-cap':0
 
     }
 }
