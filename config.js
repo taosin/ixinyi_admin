@@ -1,6 +1,6 @@
 var config = {
 //服务的链接数据
-    port: 8080,
+    port: 8180,
     //mongodb开发环境
     dbhost: "127.0.0.1",
     dbport: 278278,

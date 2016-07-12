@@ -15,6 +15,7 @@ import photolist from './views/photo_list.vue';
 import photos from './views/photos.vue';
 import about from './views/about.vue';
 import write from './views/write.vue';
+import slogin from './views/login.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -68,10 +69,14 @@ router.map({
             
         }
     },
-    '/write':{
+    '/control/':{
+       name: 'slogin',
+       component: slogin
+    },
+    '/control/write':{
        name: 'write',
        component: write
-   }
+    }
 });
 
 // router.beforeEach(function(transition) {
