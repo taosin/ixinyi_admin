@@ -16,6 +16,7 @@ import photos from './views/photos.vue';
 import about from './views/about.vue';
 import write from './views/write.vue';
 import slogin from './views/login.vue';
+import add from './views/add.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -76,6 +77,10 @@ router.map({
     '/control/write':{
        name: 'write',
        component: write
+    },
+    '/control/add':{
+       name: 'add',
+       component: add
     }
 });
 

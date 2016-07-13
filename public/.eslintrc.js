@@ -2,7 +2,7 @@ module.exports = {
     root: true,
     extends: 'airbnb-base',
     plugins: [
-        'html'
+    'html'
     ],
     globals:{
         'Vue':true,
@@ -50,7 +50,22 @@ module.exports = {
         'prefer-rest-params':0,
         'no-undef':0,
         'prefer-arrow-callback':0,
-        'new-cap':0
+        'new-cap':0,
+        'no-use-before-define':0,
+        'comma-spacing':0,
+        'no-multi-spaces':0,
+        'camelcase':0,
+        'brace-style':0,
+        'space-in-parens':0,
+        'vars-on-top':0,
+        'no-var':0,
+        'no-array-constructor':0,
+        'one-var':0,
+        'block-spacing':0,
+        'one-var-declaration-per-line':0,
+        'curly':0,
+        'one-var':0,
+        'eqeqeq':0
 
     }
 }

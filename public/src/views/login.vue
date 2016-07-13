@@ -8,7 +8,7 @@
 				</mdinput>
 			</div>
 			<div class="login-input">
-				<mdinput :value.sync="password" @keyup.enter="handlerLogin">
+				<mdinput :value.sync="password" @keyup.enter="handlerLogin" type="password">
 					<label slot="input-lable">Password</label>
 				</mdinput>
 			</div>
@@ -21,6 +21,7 @@
 </template>
 <script>
 	import mdinput from './../components/form/input.vue';
+	const md5 = require('./../../static/js/md5.js');
 	export default{
 		components:{
 			mdinput
@@ -28,22 +29,37 @@
 		data(){
 			return{
 				username: null,
-				password: null
+				password: null,
+				result:[]
 			};
 		},
 		ready(){
 			document.title = '登录－－管理后台';
 		},
 		watch:{
+			result(){
+				if(this.result){
+					window.router.go({
+						path:'/control/write'
+					});
+				}else{
+					alert('用户名或密码错误');
+				}
+			}
 		},
 		computed:{
 		},
 		methods:{
 			handlerLogin(){
-				// if(this.username && this.password){
-				// 	console.info('login success');
-				// }
-				alert(111);
+				if(this.username && this.password){
+					const user = new AV.Query('Users');
+					user.equalTo('username', this.username);
+					user.equalTo('password', md5(this.password));
+  					user.find().then(function (results) {
+      					this.result = results;
+  					}, function (error) {
+  					});
+				}
 			}
 		}
 	};

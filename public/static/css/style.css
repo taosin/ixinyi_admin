@@ -24,3 +24,44 @@
     width: 100%;
     border-radius: 0px;
 }
+.add-content{
+    border: 1px solid;
+    height: auto;
+    text-align: center;
+    margin:30px 0;
+    padding: 1px;
+}
+.bio-title{
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+.bio-item{
+    padding: 5px;
+}
+.bio-item:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.5s;
+}
+.bio-add-item{
+    float: left;
+    width: 50%;
+    margin: 1px;
+}
+.current{
+    background-color: #000000;
+    color: #ffffff; 
+    width: 48%;
+    margin: 1px;
+    transition: color 1.5s;
+}
+.bio-add{
+    margin: 5px 0;
+    height: 30px;
+}
+.about-container{
+    text-align: center;
+}

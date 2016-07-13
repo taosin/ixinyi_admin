@@ -5,7 +5,5 @@
 	</div>
 </template>
 <style type="text/css">
-	.about-container{
-		text-align: center;
-	}
+	
 </style>
