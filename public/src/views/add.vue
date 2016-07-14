@@ -5,16 +5,16 @@
 			<div class="bio-title">
 				分类
 			</div>
-			<div v-for="bio in bios" class="bio-item">
-				{{bio.text}}
+			<div v-for="bio in bios | filterBy '1' in '_serverData.iscate' " class="bio-item">
+				{{bio._serverData.name}}
 			</div>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-3 add-content">
 			<div class="bio-title">
 				标签
 			</div>
-			<div v-for="bio in bios" class="bio-item">
-				{{bio.text}}
+			<div v-for="bio in bios | filterBy '2' in '_serverData.iscate' " class="bio-item">
+				{{bio._serverData.name}}
 			</div>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-3 add-content">
@@ -22,8 +22,8 @@
 				添加
 			</div>
 			<div class="bio-add">
-				<div class="bio-add-item {{current == 1?'current':''}}" @click="selectCate(1)">分类</div>
-				<div class="bio-add-item {{current == 2?'current':''}}" @click="selectCate(2)">标签</div>
+				<div class="bio-add-item {{current == '1'?'current':''}}" @click="selectCate('1')">分类</div>
+				<div class="bio-add-item {{current == '2'?'current':''}}" @click="selectCate('2')">标签</div>
 			</div>
 			<div class="bio-add">
 				<span>名称</span>
@@ -44,23 +44,42 @@
 	</div>
 </template>
 <script>
+	import { addCate, queryCates } from './../service/add';
 	export default{
 		components:{
 		},
 		data(){
 			return{
-				bios:[
-				{ text:'哈哈哈', id:'1', state:'1' },
-				{ text:'大大大', id:'2', state:'1' },
-				{ text:'服务3', id:'3', state:'1' },
-				{ text:'大大啊等', id:'4', state:'1' },
-				],
-				current:1
+				bios:[],
+				current:'1',
+				name:null
 			};
 		},
 		ready(){
 		},
-		watch:{
+		vuex: {
+			getters: {
+				result: state => state.addResult,
+				data: state => state.result
+			},
+			actions: {
+				addCate,
+				queryCates
+			}
+		},
+		created(){
+			this.queryCates();
+		},
+		watch: {
+			result () {
+				if (this.result) {
+					this.queryCates();
+					this.name = null;
+				}
+			},
+			data(){
+				this.bios = this.data;
+			}
 		},
 		computed:{
 		},
@@ -70,16 +89,12 @@
 			},
 			handlerAdd(){
 				if(this.name){
-					const Cate = AV.Object.extend('Cates');
-					const addCate = new Cate();
-					addCate.set('name', this.name);
-					addCate.set('sate', 1);
-					addCate.set('type', this.current);
-					addCate.save().then(function(result){
-						alert('success');
-					}, function(error){
-						console.log(error);
-					});
+					const data = [];
+					data.name = this.name;
+					data.iscate = this.current;
+					data.state = '1';
+					data.op = this.$h5getValue('username');
+					this.addCate(data);
 				}
 			}
 		}

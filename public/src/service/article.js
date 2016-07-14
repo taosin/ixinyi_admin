@@ -10,5 +10,6 @@ export const getArticles = ({
   	query.find().then(function (results) {
       	dispatch('getArticles', results);
   		}, function (error) {
+  			debugger;
   	});
 };

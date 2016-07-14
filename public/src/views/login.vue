@@ -22,6 +22,7 @@
 <script>
 	import mdinput from './../components/form/input.vue';
 	const md5 = require('./../../static/js/md5.js');
+	import { doLogin } from './../service/login';
 	export default{
 		components:{
 			mdinput
@@ -30,18 +31,26 @@
 			return{
 				username: null,
 				password: null,
-				result:[]
 			};
+		},
+		vuex: {
+			getters: {
+				result: state => state.loginResult
+			},
+			actions: {
+				doLogin
+			}
 		},
 		ready(){
 			document.title = '登录－－管理后台';
 		},
 		watch:{
 			result(){
-				if(this.result){
+				if(this.result.length > 0){
 					window.router.go({
 						path:'/control/write'
 					});
+					this.$h5setValue('username',this.username);
 				}else{
 					alert('用户名或密码错误');
 				}
@@ -52,13 +61,10 @@
 		methods:{
 			handlerLogin(){
 				if(this.username && this.password){
-					const user = new AV.Query('Users');
-					user.equalTo('username', this.username);
-					user.equalTo('password', md5(this.password));
-  					user.find().then(function (results) {
-      					this.result = results;
-  					}, function (error) {
-  					});
+					const data =[];
+					data.username = this.username;
+					data.password = md5(this.password);
+					this.doLogin(data);
 				}
 			}
 		}
