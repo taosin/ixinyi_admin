@@ -1,31 +1,40 @@
 <template>
 	<div class="bio_lists">
-		<div class="bio-title">
-			<h3>目前共计{{bios.length}}个标签</h3>
+		<div class="bios-title">
+			<h3>标签</h3>
 		</div>
-		<div class="bio-list" v-for="bio in bios">
-			<a>{{bio.text}}</a>	
+		<div class="bios-list" v-for="bio in bios | filterBy '2' in '_serverData.iscate'">
+			<a>{{bio._serverData.name}}</a>	
 		</div>
 	</div>
 </template>
 <script>
+import { queryCates } from './../service/add';
 export default{
     components:{
     },
     data(){
         return{
-        	bios:[
-        		{ text:'Charles', id:'1111', url:'22222' },
-        		{ text:'HTML', id:'1111', url:'22222' },
-        		{ text:'ES6', id:'1111', url:'22222' },
-        		{ text:'JavaScript', id:'1111', url:'22222' },
-        		{ text:'vue', id:'1111', url:'22222' }
-        	]
+        	bios:[]
          };
+    },
+    vuex: {
+        getters: {
+            data: state => state.result
+        },
+        actions: {
+            queryCates
+        }
+    },
+    created(){
+            this.queryCates();
     },
     ready(){
     },
     watch:{
+        data(){
+            this.bios = this.data;
+        }
     },
     computed:{
    },
@@ -34,14 +43,14 @@ export default{
 };
 </script>
 <style type="text/css">
-	.bio-title{
+	.bios-title{
 		text-align: center;
 	}
-	.bio-list{
+	.bios-list{
 		margin: 10px;
 		/*border-bottom: 1px solid blue;*/
 	}
-	.bio-list a{
+	.bios-list a{
 		color: gray;
 		text-decoration: underline
 	}
