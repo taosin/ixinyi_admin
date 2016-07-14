@@ -105,3 +105,55 @@
     background: #ffffff;
     color: #000000;
 }
+.write-left{
+    height: 600px;
+    margin-top: 10px;
+}
+.write-textarea,
+.write-textarea:focus{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    overflow: auto;
+}
+.write-right{
+    height: 600px;
+    overflow: auto;
+    margin-top: 10px;
+    border-left: 1px solid;
+}
+.row{
+    margin: 0px;
+}
+.btn-row{
+    margin-top:10px;
+}
+.write-top{
+    /*height: 100px;*/
+    margin: 30px 120px 0 120px;
+}
+.write-cate-lists{
+    border: 1px solid;
+    /*width: 300px;*/
+    height: 50px;
+    padding:10px;
+}
+.write-cate-list {
+    float: left;
+    margin: 0px 10px;
+}
+.active{
+    background-color: #000000;
+    padding:5px 10px 5px 10px;
+    transition: padding-top 0.5s;
+}
+.active a{
+    color: #ffffff;
+}
+.wtite-title{
+    margin:20px 0;
+}
+.write-input{
+    width: 350px;
+}

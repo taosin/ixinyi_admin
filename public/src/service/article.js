@@ -13,3 +13,20 @@ export const getArticles = ({
   			debugger;
   	});
 };
+
+
+export const addArticle = ({
+  dispatch
+}, data) => {
+  const Article = AV.Object.extend('Articles');
+  const addarticle = new Article();
+  addarticle.save({
+    title: data.title,
+    content: data.content,
+    cate:data.cate,
+    state: data.state,
+    op: data.op,
+  }).then(function (object) {
+    dispatch('addArticle', object);
+  });
+};
