@@ -83,4 +83,10 @@
 		text-decoration: none;
 		transition: 1.0s;
 	}
+	.article-content{
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		height: 40px;
+	}
 </style>
