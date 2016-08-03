@@ -19,14 +19,14 @@ const leftmenu = [{
   url: '#/index/biolist',
   level:'1'
 
-}
+},
 // }, {
 //   id: 1,
 //   text: '相册',
 //   url: '#/index/photolist',
 //   level:'1'
 // }, {
-,{
+{
   id: 1,
   text: '相册',
   url: '#/index/photolist',
