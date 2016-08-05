@@ -6,7 +6,7 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var cssLoaders = require('./css-loaders')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-// var AliyunossWebpackPlugin = require('aliyunoss-webpack-plugin')
+var AliyunossWebpackPlugin = require('aliyunoss-webpack-plugin')
 
 module.exports = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
@@ -50,7 +50,19 @@ module.exports = merge(baseWebpackConfig, {
         removeAttributeQuotes: true
           // more options:
           // https://github.com/kangax/html-minifier#options-quick-reference
+        }
+      }),
+    new AliyunossWebpackPlugin({
+     buildPath:__dirname + '/build',
+     region: 'oss-cn-shanghai',
+     accessKeyId: 'your key',
+     accessKeySecret: 'your secret',
+     bucket: 'thisisatest',
+     deleteAll: true,
+     getObjectHeaders: function(filename) {
+      return {
+        'Cache-Control': 'max-age=2592000'
       }
-    })
-  ]
-})
+    }
+    ]
+  })

@@ -6,7 +6,7 @@ module.exports = {
     index: path.resolve(__dirname, 'dist/index.html'),
     assetsRoot: path.resolve(__dirname, 'dist'),
     assetsSubDirectory: '',
-    assetsPublicPath: '',
+    assetsPublicPath: 'http://taoxindetest.oss-cn-shanghai.aliyuncs.com/',
     productionSourceMap: false
   },
   dev: {
