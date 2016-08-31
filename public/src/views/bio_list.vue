@@ -14,7 +14,7 @@ import { queryCates } from './../service/add';
 // import markDown  from 'vue-s-markdown/src/markdown/index';
 export default{
     components:{
-        markDown
+        // markDown
     },
     data(){
         return{
