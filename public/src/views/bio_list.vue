@@ -6,12 +6,10 @@
 		<div class="bios-list" v-for="bio in bios | filterBy '2' in '_serverData.iscate'">
 			<a>{{bio._serverData.name}}</a>	
 		</div>
-        <!-- <mark-down :content.sync="content"></mark-down> -->
 	</div>
 </template>
 <script>
 import { queryCates } from './../service/add';
-// import markDown  from 'vue-s-markdown/src/markdown/index';
 export default{
     components:{
         // markDown
