@@ -50,19 +50,20 @@ module.exports = merge(baseWebpackConfig, {
         removeAttributeQuotes: true
           // more options:
           // https://github.com/kangax/html-minifier#options-quick-reference
-        }
-      }),
-    new AliyunossWebpackPlugin({
-     buildPath:__dirname + '/build',
-     region: 'oss-cn-shanghai',
-     accessKeyId: 'your key',
-     accessKeySecret: 'your secret',
-     bucket: 'thisisatest',
-     deleteAll: true,
-     getObjectHeaders: function(filename) {
-      return {
-        'Cache-Control': 'max-age=2592000'
       }
-    }
-    ]
-  })
+    }),
+    new AliyunossWebpackPlugin({
+      buildPath: __dirname + '/../dist',
+      region: 'oss-cn-shanghai',
+      accessKeyId: 'vlWuDFoE4l20P5VA',
+      accessKeySecret: 'FydkaJWzYpAIJnIqvMTcvcA2kQNReL',
+      bucket: 'taoxindetest',
+      deleteAll: true,
+      getObjectHeaders: function(filename) {
+        return {
+          'Cache-Control': 'max-age=2592000'
+        }
+      }
+    })
+  ]
+})

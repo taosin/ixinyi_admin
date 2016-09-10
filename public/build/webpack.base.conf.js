@@ -65,7 +65,11 @@ module.exports = {
           limit: 10000,
           name: path.join(config.dev.assetsSubDirectory, '[name].[hash:7].[ext]')
         }
-      }
+      },
+      {
+             test: /\.scss?$/,
+             loader: 'style-loader!css-loader!sass-loader'
+        }
     ]
   },
   vue: {

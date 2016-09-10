@@ -1,0 +1,25 @@
+.menu{
+	border-bottom: 1px solid;
+	width: 100%;
+	height: 60px;
+	padding-top: 20px;
+	.main{
+		float: right;
+		margin-right: 70px;
+		ul{
+
+			li{
+				padding:0 10px;
+				list-style: none;
+				float: left;
+				font-size: 18px;
+
+				a:hover{
+					text-decoration: none;
+					color: orange;
+					text-transform: 1.4s;
+				}
+			}
+		}
+	}
+}

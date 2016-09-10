@@ -21,7 +21,6 @@
     /*height: 40px;
     background: #e4e4e4;*/
     margin-bottom: 0px;
-    border-bottom: 2px solid;
   }
   .footer-container{
     position: absolute;

@@ -7,12 +7,6 @@ import store from './vuex/store';
 import App from './App.vue';
 import filters from './filter';
 import index from './views/index.vue';
-import articlelist from './views/article_list.vue';
-import article from './views/article.vue';
-import catelist from './views/cate_list.vue';
-import biolist from './views/bio_list.vue';
-import photolist from './views/photo_list.vue';
-import photos from './views/photos.vue';
 import about from './views/about.vue';
 import write from './views/write.vue';
 import slogin from './views/login.vue';
@@ -43,29 +37,8 @@ router.map({
         name:'index',
         component:index,
         subRoutes:{
-            '/':{
-                component:articlelist
-            },
-            '/articlelist':{
-                component:articlelist
-            },
-            '/article':{
-                component:article
-            },
-            '/catelist':{
-                component:catelist
-            },
-            '/biolist':{
-                component:biolist
-            },
             '/about':{
                 component:about
-            },
-            '/photolist':{
-                component:photolist
-            },
-            '/photos':{
-                component:photos
             }
             
         }

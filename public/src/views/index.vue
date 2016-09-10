@@ -1,31 +1,29 @@
 <!-- 首页 -->
 <template>
 	<div>
-		<leftlayout>
-			<div slot="left_menu" >
-				<leftmenu :data="menus"></leftmenu>
+		<toplayout>
+			<div slot="top_menu" >
+				<menu></menu>
 			</div>
-			<div slot="left_container">
+			<div slot="top_container">
 				<router-view class="view" transition="expand" transition-mode="out-in"></router-view>
 			</div>
-		</leftlayout>
+		</toplayout>
 	</div>
 </template>
 <script>
-	import leftlayout from './../components/leftlayout.vue';
-	import leftmenu from './../components/leftmenu.vue';
-	import { getLeftMenus } from './../service/menu.js';
+	import toplayout from './../components/toplayout.vue';
+	import menu from './menu.vue';
+	import './../../static/css/index.scss';
 	export default{
 		components:{
-			leftlayout,
-			leftmenu,
+			toplayout,
+			menu
 		},
 		vuex: {
 			getters: {
-				menus: state => state.leftmenus
 			},
 			actions: {
-				getLeftMenus
 			}
 		},
 		data(){
@@ -33,7 +31,6 @@
 			};
 		},
 		created(){
-			this.getLeftMenus();
 		},
 		ready(){
 		},
