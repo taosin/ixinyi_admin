@@ -1,8 +1,14 @@
 .menu{
-	border-bottom: 1px solid;
-	width: 100%;
-	height: 60px;
-	padding-top: 20px;
+	position: fixed;
+    border-top: 2px solid #f70;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    z-index: 2;
+    padding-top: 10px;
 	.logo{
 		width: 40px;
 		float: left;
@@ -22,7 +28,9 @@
 				list-style: none;
 				float: left;
 				font-size: 18px;
-
+				a{
+					    -webkit-transition: all .2s linear
+				}
 				a:hover,
 				a:focus{
 					text-decoration: none;

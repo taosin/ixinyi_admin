@@ -1,0 +1,58 @@
+.techs{
+	width: 100%;
+	.techs-top{
+		height: 260px;
+		width: 100%;
+		background: #fff;
+	}
+	.techs-bios{
+		width: 100%;
+		text-align: center;
+		.bio{
+			position: relative;
+			display: inline-block;
+			max-width: 100%;
+			height: 24px;
+			margin: 0 10px 5px 0;
+			line-height: 24px;
+			padding: 0 8px 0 18px;
+			border-radius: 0 4px 4px 0;
+			background: #eee;
+			font-size: 12px;
+			color: #333;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		.bio.active{
+			background: orange;
+		}
+		.bio:hover{
+			text-decoration: none;
+			background: #333;
+			color: #fff;
+
+		}
+	}
+	.techs-main{
+		width: 100%;
+		.techs-content{
+			width: 1000px;
+			margin: 0 auto;
+			background: #333;
+			min-height: 500px;
+			box-shadow: 0 0 5px rgba(0,0,0,1.4);
+			.techs-lists{
+			padding: 0 10px;
+				.techs-list{
+					padding: 10px;
+					text-align: left;
+					border-bottom: 1px dashed #fff;
+				}
+			}
+		}
+	}	
+}
