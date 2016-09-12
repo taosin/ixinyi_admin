@@ -42,7 +42,7 @@
 		.techs-content{
 			width: 1000px;
 			margin: 0 auto;
-			background: #333;
+			background: #e3e3e3;
 			min-height: 500px;
 			box-shadow: 0 0 5px rgba(0,0,0,1.4);
 			.techs-lists{
@@ -51,6 +51,19 @@
 					padding: 10px;
 					text-align: left;
 					border-bottom: 1px dashed #fff;
+					.title{
+						float: left;
+						width: 200px;
+					}
+					.date{
+						float: right;
+					}
+					.bio{
+						padding: 4px 10px;
+						background: #d0d0d0;
+						margin: 5px 8px;
+						border-radius: 3px;
+					}
 				}
 			}
 		}
