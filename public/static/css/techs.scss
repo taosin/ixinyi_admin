@@ -46,7 +46,7 @@
 			min-height: 500px;
 			box-shadow: 0 0 5px rgba(0,0,0,1.4);
 			.techs-lists{
-			padding: 0 10px;
+				padding: 0 10px;
 				.techs-list{
 					padding: 10px;
 					text-align: left;
@@ -72,12 +72,13 @@
 }
 .techdetail{
 	width: 100%;
+	background: #fff;
 	.techdetail-top{
 		height: 100px;
 		// background: #ddd;
 	}
 	.techdetail-main{
-		margin: 0 auto;
+		margin: 10px auto;
 		height: auto;
 		width: 1000px;
 		box-shadow: 0 0 5px rgba(0,0,0,.4);
@@ -86,13 +87,22 @@
 		padding: 10px 0;
 		border-radius: 0;
 		.top{
-
-		}
-		.createtime{
-			color: #333;
+			border-bottom: 1px dashed;
+			padding-bottom: 10px;
+			.createtime{
+				color: #333;
+			}
+			.tags{
+				span{
+				}
+				a{
+					margin: 5px;
+				}
+			}
 		}
 		.content{
 			margin-top: 20px;
+			padding: 10px;
 		}
 	}
 }

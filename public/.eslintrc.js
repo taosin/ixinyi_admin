@@ -65,7 +65,8 @@ module.exports = {
         'one-var-declaration-per-line':0,
         'curly':0,
         'one-var':0,
-        'eqeqeq':0
+        'eqeqeq':0,
+        'object-shorthand':0
 
     }
 }
