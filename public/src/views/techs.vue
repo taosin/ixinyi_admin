@@ -11,9 +11,9 @@
 		<div class="techs-main">
 			<div class="techs-content">
 				<div class="techs-lists">
-					<div class="techs-list" v-for="data in datas">
+					<div class="techs-list" v-for="data in datas" @click="goDetail($index)">
 						<div class="title">
-							<a>{{data.title}}</a>
+							<a href="#">{{data.title}}</a>
 						</div>
 						<a class="bio" v-for="b in data.bio">{{b.name}}</a>
 						<label class="date">{{data.date}}</label>
@@ -68,6 +68,14 @@ export default{
     computed:{
     },
     methods:{
+
+    	// 查看全文
+    	goDetail(id){
+    		const url = '/index/techDetail';
+    		window.router.go({
+    			path:url
+    		});
+    	}
     }
 };
 </script>

@@ -13,6 +13,7 @@ import slogin from './views/login.vue';
 import add from './views/add.vue';
 import home from './views/home.vue';
 import techs from './views/techs.vue';
+import techDetail from './views/techDetail.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -47,6 +48,9 @@ router.map({
             },
             '/techs':{
                 component:techs
+            },
+            '/techDetail':{
+                component:techDetail
             }
             
         }

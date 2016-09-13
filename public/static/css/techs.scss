@@ -70,3 +70,29 @@
 		}
 	}	
 }
+.techdetail{
+	width: 100%;
+	.techdetail-top{
+		height: 100px;
+		// background: #ddd;
+	}
+	.techdetail-main{
+		margin: 0 auto;
+		height: auto;
+		width: 1000px;
+		box-shadow: 0 0 5px rgba(0,0,0,.4);
+		height: 1000px;
+		background: #ddd;
+		padding: 10px 0;
+		border-radius: 0;
+		.top{
+
+		}
+		.createtime{
+			color: #333;
+		}
+		.content{
+			margin-top: 20px;
+		}
+	}
+}
