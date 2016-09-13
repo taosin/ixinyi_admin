@@ -4,10 +4,12 @@
 		height: 260px;
 		width: 100%;
 		background: #fff;
+		padding-top: 20px;
 	}
 	.techs-bios{
 		width: 100%;
 		text-align: center;
+		margin-top: 20px;
 		.bio{
 			position: relative;
 			display: inline-block;
@@ -45,6 +47,8 @@
 			background: #e3e3e3;
 			min-height: 500px;
 			box-shadow: 0 0 5px rgba(0,0,0,1.4);
+			margin-top: -85px;
+			margin-bottom: 10px;
 			.techs-lists{
 				padding: 0 10px;
 				.techs-list{
@@ -82,7 +86,7 @@
 		height: auto;
 		width: 1000px;
 		box-shadow: 0 0 5px rgba(0,0,0,.4);
-		height: 1000px;
+		min-height: 500px;
 		background: #ddd;
 		padding: 10px 0;
 		border-radius: 0;
