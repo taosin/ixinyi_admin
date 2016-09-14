@@ -8,7 +8,7 @@
 			<ul>
 				<li><a href="#">首页</a></li>
 				<li><a href="#/index/techs">技术</a></li>
-				<li><a>生活</a></li>
+				<li><a href="#/index/life">生活</a></li>
 				<li><a>关于我</a></li>
 				<li><a>时间轴</a></li>
 			</ul>

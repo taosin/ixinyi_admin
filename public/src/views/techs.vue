@@ -4,8 +4,7 @@
 		<div class="techs-top">
 			<label>在这灯火辉煌的城市，我一无所有</label>
 			<div class="techs-bios">
-				<a class="bio {{current ===$index?'active':''}}">全部</a>
-				<a v-for="nav in navs" class="bio {{current ===$index?'active':''}}">{{nav.name}}</a>
+				<a v-for="nav in navs" class="bio {{current ===$index?'active':''}}" @click="selectTag($index)">{{nav.name}}</a>
 			</div>
 		</div>
 		<div class="techs-main">
@@ -33,6 +32,7 @@ export default{
     data(){
     	return{
     		navs:[
+    		{ name:'全部', id:'0' },
     		{ name:'javascript', id:'1' },
     		{ name:'css', id:'2' },
     		{ name:'html', id:'3' },
@@ -75,6 +75,9 @@ export default{
     		window.router.go({
     			path:url
     		});
+    	},
+    	selectTag(index){
+    		this.current = index;
     	}
     }
 };

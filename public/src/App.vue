@@ -31,7 +31,7 @@
     }
 
     .expand-enter {
-        animation: expand-in 0.2s;
+        animation: expand-in 0.5s;
     }
 
     .expand-leave{
