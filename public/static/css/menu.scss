@@ -9,35 +9,37 @@
 	box-shadow: 0 0 5px rgba(0,0,0,.2);
 	z-index: 2;
 	padding-top: 40px;
-	.logo{
-		width: 40px;
-		float: left;
-		margin-left: 50px;
-		img{
-			border-radius: 50%;
-			width: 30px;
+	.div{
+		margin: 0 auto;
+		width: 90%;
+		.logo{
+			width: 40px;
+			float: left;
+			img{
+				border-radius: 50%;
+				width: 30px;
+			}
 		}
-	}
-	.main{
-		float: right;
-		margin-right: 70px;
-		ul{
-
-			li{
-				padding:0 10px;
-				list-style: none;
-				float: left;
-				font-size: 18px;
-				a{
-					-webkit-transition: all .2s linear;
-					color: #818a91;
-					border-bottom:2px solid #fff;
-				}
-				a:hover,
-				a:focus{
-					text-decoration: none;
-					color: #090a0a;
-					border-bottom:2px solid #818a91;
+		.main{
+			float: right;
+			// margin-right: 70px;
+			ul{
+				li{
+					padding:0 10px;
+					list-style: none;
+					float: left;
+					font-size: 18px;
+					a{
+						-webkit-transition: all .2s linear;
+						color: #818a91;
+						border-bottom:2px solid #fff;
+					}
+					a:hover,
+					a:focus{
+						text-decoration: none;
+						color: #090a0a;
+						border-bottom:2px solid #818a91;
+					}
 				}
 			}
 		}
