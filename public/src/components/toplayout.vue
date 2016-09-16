@@ -16,7 +16,9 @@
 <style type="text/css">
   .main-container .view{
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
+    background: url('./../../static/img/bk.png');
+    padding-bottom: 20px;
   }
   .top-nav{
     /*height: 40px;

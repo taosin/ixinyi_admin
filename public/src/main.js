@@ -16,6 +16,7 @@ import techs from './views/techs.vue';
 import techDetail from './views/techDetail.vue';
 import life from './views/life.vue';
 import blogs from './views/blogs.vue';
+import blog from './views/blog.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -62,6 +63,9 @@ router.map({
             },
             '/blogs':{
                 component:blogs
+            },
+            '/blog':{
+                component:blog
             }
             
         }

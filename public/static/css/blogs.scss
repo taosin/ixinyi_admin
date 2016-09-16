@@ -1,0 +1,137 @@
+.blogs{
+	width: 100%;
+	// border: 1px solid;
+	min-height: 800px;
+	font-family: Lato,"Microsoft Jhenghei","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+	font-size: 14px;
+	color: #373a3c;
+	line-height: 2;
+	padding-top: 50px;
+	.main{
+		width: 70%;
+		min-height: 800px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		text-align: left;
+		.blog{
+			background: #fff;
+			padding: 10px 20px 30px 20px;
+			margin-top: 30px;
+			.title{
+				// border-bottom: 1px solid;
+				height: 70px;
+				h3{
+					a{
+						color: #818a91;
+						cursor:pointer;
+					}
+				}
+				a:hover{
+					text-decoration: none;
+					// border-bottom: 1px dashed #c8c8c8;
+					border-bottom:2px solid;
+				}
+				span{
+					color: #333;
+					font-size: 10px;
+				}
+			}
+			.tags{
+				border-bottom: 1px solid #373a3c;
+				span{
+					float: left;
+				}
+				a{
+					display: inline-block;
+					max-width: 100%;
+					height: 24px;
+					margin: 0 10px 5px 0;
+					line-height: 24px;
+					padding: 0 8px 0 18px;
+					border-radius: 0 4px 4px 0;
+					background: #eee;
+					font-size: 12px;
+					color: #333;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					cursor:pointer;
+				}
+				a:hover{
+					text-decoration: none;
+				}
+				a::before{
+
+				}
+			}
+			.content{
+				margin-top: 10px;
+				text-indent: 2rem;
+			}
+			.read{
+				margin-top: 30px;
+				a{
+					display: inline-block;
+					padding: 5px 30px;
+					text-decoration: none;
+					color: #818a91;
+					border: 2px solid #e3e3e3;
+					cursor:pointer;
+				}
+				a:hover{
+					color: #747d85;
+					border-color: #747d85;
+					outline: 0;
+					-webkit-transition: all .5s linear;
+				}
+			}
+		}
+	}
+}
+
+.blog{
+	padding-top: 20px;
+	width: 100%;
+	.top{
+		.title{
+			a{
+				color: #818a91;
+			}
+			a:hover{
+				text-decoration: none;
+				border-bottom: 1px dashed #c8c8c8;
+			}
+		}
+	}
+	.main{
+		margin: 0 auto;
+		width: 70%;
+		padding: 20px;
+		text-align: left;
+		background: #fff;
+		opacity: .8;
+		margin-top: 20px;
+	}
+	.bov{
+		margin: 0 auto;
+		border-top: 1px solid #333;
+		width: 70%;
+		margin-top: 20px;
+		height: 160px;
+		border-bottom: 1px dashed;
+		padding-top: 20px;
+		.pre{
+			width: 50%;
+			float: left;
+			text-align: left;
+		}
+		.next{
+			width: 50%;
+			float: right;
+			text-align: right;
+		}
+	}
+}
