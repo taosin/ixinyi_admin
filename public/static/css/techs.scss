@@ -3,7 +3,7 @@
 	.techs-top{
 		height: 260px;
 		width: 100%;
-		background: #fff;
+		// background: #fff;
 		padding-top: 20px;
 	}
 	.techs-bios{
@@ -28,6 +28,7 @@
 			box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
+			cursor:pointer;
 		}
 		.bio.active{
 			background: orange;
