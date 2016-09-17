@@ -16,9 +16,7 @@
         },
         store,
         ready(){
-            const appId = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
-            const appKey = 'pE0K2vCPp01I1DBS4NhcfOFo';
-            AV.init({ appId, appKey });
+            this.$AVInit();
         }
     };
 </script>

@@ -2,14 +2,14 @@
 <template>
 	<div class="blogs">
 		<div class="main">
-			<div class="blog" v-for="data in datas">
+			<div class="blog" v-for="article in articles">
 				<div class="title">
-					<h3><a @click="goDetail($index)">{{data.title}}</a></h3>
-					<span>发布时间：{{data.date}}</span>
+					<h3><a @click="goDetail($index)">{{article.title}}</a></h3>
+					<span>发布时间：{{article.date}}</span>
 				</div>
 				<div class="tags">
 					<span>标签：</span>
-					<a v-for="tag in data.bio">{{tag.name}}</a>
+					<a v-for="tag in data.bio">{{article.name}}</a>
 				</div>
 				<div class="content">
 					<p>钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的</p>
@@ -24,33 +24,26 @@
 <script>
 // import * from './../../components/*';
 import './../../static/css/blogs.scss';
+import { getArticles } from './../service/article';
 export default{
 	components:{
         // *
     },
+    vuex:{
+    	getters:{
+    		datas: state => state.articles
+    	},
+    	actions:{
+    		getArticles
+    	}
+    },
     data(){
     	return{
-    		datas:[
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }, { name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }, { name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }, { name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }, { name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] },
-    		{ title:'钢铁是怎样炼成的', date:'2014-34-12', bio:[{ name:'javascript' }, { name:'vue' }] }
-    		]
-    	};
+    		articles:[]
+	    	};
     },
-    ready(){
+    attached(){
+    	this.getArticles();
     },
     watch:{
     },
