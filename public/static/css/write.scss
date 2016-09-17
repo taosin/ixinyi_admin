@@ -1,0 +1,28 @@
+.write{
+	width: 100%;
+	padding: 20px;
+	.top{
+		height: 50px;
+		input{
+			border: none;
+			width: 49%;
+			background: none;
+			padding: 5px;
+			font-size: 20px;
+		}
+		input:focus{
+			outline: none;
+			border: 1px solid #ddd;
+		}
+		span{
+			font-size: 20px;
+		}
+	}
+	.main{
+		border: 1px solid #ddd;
+		overflow: auto;
+	}
+	.footer{
+		margin-top: 20px;
+	}
+}

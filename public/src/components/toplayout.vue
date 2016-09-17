@@ -17,7 +17,7 @@
   .main-container .view{
     text-align: center;
     margin-top: 100px;
-    background: url('./../../static/img/bk.png');
+    background: url('http://blog.xinsay.cn/bk.png');
     padding-bottom: 20px;
   }
   .top-nav{

@@ -1,6 +1,7 @@
 const state = {
 	articles: [],
-	addArticleResult: []
+	addArticleResult: [],
+	article:[]
 };
 
 // mutations
@@ -10,6 +11,9 @@ const mutations = {
 	},
 	addArticle(allState, result) {
 		allState.addArticleResult = result;
+	},
+	getArticleById(allState, result) {
+		allState.article = result;
 	}
 
 };

@@ -1,83 +1,71 @@
 <template>
-    <div>
-        <div class="write-top">
-            <div class="wtite-title">
-                <input type="text" class="bio-input write-input" placeholder="标题">
-            </div>
-            <div class="write-cate">
-                <label>分类</label>
-                <div class="write-cate-lists">
-                    <div class="write-cate-list {{currentSelected === $index? 'active':''}}" v-for="list in lists | filterBy '1' in '_serverData.iscate'">
-                        <a @click="selectCate($index, list.id)">{{list._serverData.name}}</a>
-                    </div>
-                </div>
-            </div>
+    <div class="write">
+        <div class="top">
+            <input type="text" placeholder="请输入标题" v-model="title">
+            <input type="text" placeholder="请输入标签" v-model="tag">
         </div>
-        <div class="row">
-            <div class="write-left col-lg-offset-1 col-lg-5 col-md-5 col-sm-5">
-                <textarea class="write-textarea" v-model="content" @keyup="contentTrans"></textarea>
-            </div>
-            <div class="write-right col-lg-6 col-md-6 col-sm-6" id="write-right">
-                <!-- {{htmlContent}} -->
-            </div>
+        <div class="main">
+            <Markdown :content.sync="content"></Markdown>
         </div>
-        <div class="row">
-            <div class="col-lg-offset-1 btn-row">
-                <button class="btn btn-login common-btn">提交</button>
-                <button class="btn btn-cancel common-btn">取消</button>
-            </div>
+        <div class="footer">
+            <a class="publish" @click="publish">发布</a>
+            <a class="reback" @click="reback">返回首页</a>
         </div>
     </div>
 </template>
 <script>
-// import * from './../../components/*';
-import { queryCates } from './../service/add';
-export default{
-    components:{
-        // *
-    },
-    data(){
-        return{
-            content:null,
-            htmlContent:null,
-            lists:[],
-            currentSelected:1
-        };
-    },
-    ready(){
-        document.title = '发表文章－－管理后台';
-    },
-    watch:{
+    import Markdown from 'vue-s-markdown/src/markdown/index';
+    import { addArticle } from './../service/article';
+    import './../../static/css/write.scss';
+    export default{
+        components:{
+            Markdown
+        },
         data(){
-            this.lists = this.data;
-        }
-
-    },
-    vuex: {
-        getters: {
-            data: state => state.result
+            return{
+                content:'',
+                title:'',
+                tag:''
+            };
         },
-        actions: {
-            queryCates
-        }
-    },
-    created(){
-        this.queryCates();
-    },
-    computed:{
-    },
-    methods:{
-         // mackdown转换为html
-         contentTrans(){
-            const text = this.content;
+        ready(){
+            document.title = '发表文章－－管理后台';
+        },
+        watch:{
+            result(val){
+                debugger;
+            }
+        },
+        vuex: {
+            getters: {
+                result: state => state.addArticleResult
+            },
+            actions: {
+                addArticle
+            }
+        },
+        created(){
+        },
+        computed:{
+        },
+        methods:{
+        // 发布文章
+        publish(){
+            alert(111);
+            if(!this.title || !this.tag || !this.content){
+                return;
+            }
             const converter = new showdown.Converter();
-            const html = converter.makeHtml(text);
-            this.htmlContent = html;
-            document.getElementById('write-right').innerHTML = html;
+            const data = {};
+            data.title = this.title;
+            data.content = converter.makeHtml(this.content);
+            data.tag = this.tag;
+            data.state = '1';
+            this.addArticle(data);
         },
-        selectCate(index, id){
-            console.info(index+'----'+id);
-            this.currentSelected = index;
+        // 返回首页
+        reback(){
+
         }
     }
 };

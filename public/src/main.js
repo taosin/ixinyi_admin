@@ -64,7 +64,7 @@ router.map({
             '/blogs':{
                 component:blogs
             },
-            '/blog':{
+            '/blog/:aid':{
                 component:blog
             }
             

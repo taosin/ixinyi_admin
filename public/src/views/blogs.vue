@@ -4,19 +4,18 @@
 		<div class="main">
 			<div class="blog" v-for="article in articles">
 				<div class="title">
-					<h3><a @click="goDetail($index)">{{article.title}}</a></h3>
+					<h3><a @click="goDetail(article.id)">{{article.title}}</a></h3>
 					<span>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
-					{{article.id}}
 				</div>
 				<div class="tags">
 					<span>标签：</span>
-					<a v-for="tag in article.bio">{{article.name}}</a>
+					<a v-if="article.tag">{{article.tag}}</a>
 				</div>
 				<div class="content">
-					<p>{{article.content}}</p>
+					<!-- <div v-html="article.content"></div> -->
 				</div>
 				<div class="read">
-					<a @click="goDetail($index)">阅读全文</a>
+					<a @click="goDetail(article.id)">阅读全文</a>
 				</div>
 			</div>
 		</div>
@@ -26,6 +25,7 @@
 // import * from './../../components/*';
 import './../../static/css/blogs.scss';
 import { getArticles } from './../service/article';
+const marked = require('./../../static/js/marked.min.js');
 export default{
 	components:{
         // *
@@ -38,25 +38,28 @@ export default{
     		getArticles
     	}
     },
+    filters: {
+    	marked: marked
+    },
     data(){
     	return{
     		articles:[]
-	    	};
+    	};
     },
     attached(){
     	this.getArticles();
     },
     watch:{
     	datas(){
-    		this.articles = this.datas;
+    		this.articles = this.$deepCopy(this.datas);
     	}
     },
     computed:{
     },
     methods:{
     	// 跳转到详情页
-    	goDetail(index){
-    		const url = '/index/blog';
+    	goDetail(id){
+    		const url = '/index/blog/'+id;
     		window.router.go({
     			path:url
     		});
