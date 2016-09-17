@@ -5,14 +5,14 @@
 			<div class="blog" v-for="article in articles">
 				<div class="title">
 					<h3><a @click="goDetail($index)">{{article.title}}</a></h3>
-					<span>发布时间：{{article.date}}</span>
+					<span>发布时间：{{article.createdAt}}</span>
 				</div>
 				<div class="tags">
 					<span>标签：</span>
-					<a v-for="tag in data.bio">{{article.name}}</a>
+					<a v-for="tag in article.bio">{{article.name}}</a>
 				</div>
 				<div class="content">
-					<p>钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的钢铁是怎样炼成的</p>
+					<p>{{article.content}}</p>
 				</div>
 				<div class="read">
 					<a @click="goDetail($index)">阅读全文</a>
@@ -46,6 +46,9 @@ export default{
     	this.getArticles();
     },
     watch:{
+    	datas(){
+    		this.articles = this.datas;
+    	}
     },
     computed:{
     },
