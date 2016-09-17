@@ -53,6 +53,7 @@ export default{
     watch:{
     	result(val){
     		this.article = val;
+    		document.title = val.title;
     	}
     },
     computed:{
