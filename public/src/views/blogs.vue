@@ -5,7 +5,8 @@
 			<div class="blog" v-for="article in articles">
 				<div class="title">
 					<h3><a @click="goDetail($index)">{{article.title}}</a></h3>
-					<span>发布时间：{{article.createdAt}}</span>
+					<span>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
+					{{article.id}}
 				</div>
 				<div class="tags">
 					<span>标签：</span>

@@ -155,7 +155,7 @@ exports.install = function install (Vue) {
     if (!input || !format) {
       return '';
     }
-    input = new Date(new Date(input).getTime() - 8 * 3600 * 1000);
+    input = new Date(new Date(input).getTime());
     var date = {
       'M+': input.getMonth() + 1,
       'd+': input.getDate(),
@@ -175,6 +175,27 @@ exports.install = function install (Vue) {
     }
     return format;
   };
+
+  function AVInit(){
+    const X_CC_Id = 'Your id';
+    const X_CC_Key = 'Your key';
+    AV.init({ appId:X_CC_Id, appKey:X_CC_Key });
+  }
+
+
+  // 处理leadcloud中查询出的数据
+  function transDataFromLc(oldObject){
+    const newObject = [];
+    for (const key in oldObject) {
+      if (key) {
+        newObject[key] = oldObject[key]._serverData;
+        newObject[key].id = oldObject[key].id;
+        newObject[key].createdAt = oldObject[key].createdAt;
+        newObject[key].updatedAt = oldObject[key].updatedAt;
+      }
+    }
+    return newObject;
+  }
 
   // 添加vue属性
   Object.defineProperties(Vue.prototype, {
@@ -268,6 +289,16 @@ exports.install = function install (Vue) {
     $replaceStr: {
       get () {
         return replaceStr;
+      }
+    },
+    $AVInit: {
+      get () {
+        return AVInit;
+      }
+    },
+    $transDataFromLc:{
+      get (){
+        return transDataFromLc;
       }
     }
 
