@@ -1,8 +1,10 @@
 export const getArticles = ({
     dispatch
-}) => {
+}, data) => {
     const query = new AV.Query('Articles');
     query.descending('createdAt');
+    query.limit(data.limit); // 最多返回 10 条结果
+        query.skip(data.start);
     query.find().then(function(results) {
         dispatch('getArticles', results);
     }, function(error) {});

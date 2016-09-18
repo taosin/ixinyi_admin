@@ -12,7 +12,7 @@
 					<a v-if="article.tag">{{article.tag}}</a>
 				</div>
 				<div class="content">
-					<!-- <div v-html="article.content"></div> -->
+					<div v-html="article.content"></div>
 				</div>
 				<div class="read">
 					<a @click="goDetail(article.id)">阅读全文</a>
@@ -43,11 +43,16 @@ export default{
     },
     data(){
     	return{
-    		articles:[]
+    		articles:[],
+    		start:0,
+    		limit:5
     	};
     },
     attached(){
-    	this.getArticles();
+    	const data = {};
+    	data.start = this.start;
+    	data.limit = this.limit;
+    	this.getArticles(data);
     },
     watch:{
     	datas(){
