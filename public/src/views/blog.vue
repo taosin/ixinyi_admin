@@ -39,7 +39,8 @@ export default{
     },
     vuex:{
     	getters:{
-    		result: state => state.article
+    		result: state => state.article,
+    		datas: state => state.articles
     	},
     	actions:{
     		getArticleById
@@ -49,12 +50,15 @@ export default{
     	const id = this.$route.params.aid;
     	console.info(id);
     	this.getArticleById(id);
+
     },
     watch:{
     	result(val){
     		this.article = val;
     		document.title = val.title;
     	}
+    	// datas(val){
+    	// }
     },
     computed:{
     },

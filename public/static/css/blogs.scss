@@ -91,6 +91,21 @@
 			}
 		}
 	}
+	.loadmore{
+		width: 80%;
+		margin: 0 auto;
+		a{
+			border: 2px solid #ddd;
+			padding: 8px 15px;
+			color: #818a91;
+			cursor:pointer;
+			font-size: 16px;
+		}
+		a:hover{
+			border: 2px solid #333;
+			text-decoration: none;
+		}
+	}
 }
 
 .blog{
