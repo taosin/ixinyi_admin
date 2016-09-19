@@ -22,14 +22,14 @@
 		<!-- 加载更多 -->
 		<div class="loadmore">
 			<!-- <div> -->
-			<a @click="loadMore">加载更多</a>
+			<a @click="loadMore" v-if="articles.length < total">加载更多</a>
 		</div>
 	</div>
 </template>
 <script>
 // import * from './../../components/*';
 import './../../static/css/blogs.scss';
-import { getArticles } from './../service/article';
+import { getArticles, getArticleCount } from './../service/article';
 const marked = require('./../../static/js/marked.min.js');
 export default{
 	components:{
@@ -37,10 +37,12 @@ export default{
     },
     vuex:{
     	getters:{
-    		datas: state => state.articles
+    		datas: state => state.articles,
+    		total:state => state.articleCount
     	},
     	actions:{
-    		getArticles
+    		getArticles,
+    		getArticleCount
     	}
     },
     filters: {
@@ -59,6 +61,7 @@ export default{
     	data.start = this.start;
     	data.limit = this.limit;
     	this.getArticles(data);
+    	this.getArticleCount();
     },
     watch:{
     	datas(){

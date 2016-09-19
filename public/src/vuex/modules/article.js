@@ -1,19 +1,25 @@
 const state = {
 	articles: [],
 	addArticleResult: [],
-	article:[]
+	article:[],
+	articleCount:0
 };
 
 // mutations
 const mutations = {
 	getArticles(allState, articles) {
 		allState.articles =	Vue.prototype.$transDataFromLc(articles);
+		// const data = Vue.prototype.$dealWithArticlesData(articles);
+		// Vue.prototype.$h5setValue(data);
 	},
 	addArticle(allState, result) {
 		allState.addArticleResult = result;
 	},
 	getArticleById(allState, result) {
 		allState.article = result;
+	},
+	getArticleCount(allState, result) {
+		allState.articleCount = result;
 	}
 
 };

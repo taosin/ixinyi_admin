@@ -16,10 +16,10 @@
 		</div>
 		<div class="bov">
 			<div class="pre">
-				<a>上一个文章</a>
+				<a @click="forward('pre')">上一个文章</a>
 			</div>
 			<div class="next">
-				<a>下一个文章</a>
+				<a @click="forward('next')">下一个文章</a>
 			</div>
 		</div>
 	</div>
@@ -63,6 +63,17 @@ export default{
     computed:{
     },
     methods:{
+    	forward(type){
+    		switch(type) {
+    			case 'pre':
+    				
+    				break;
+    			case 'type':
+    				
+    				break;
+    			default:
+    		}
+    	}
     }
 };
 </script>

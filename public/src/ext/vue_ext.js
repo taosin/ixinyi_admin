@@ -177,8 +177,8 @@ exports.install = function install (Vue) {
   };
 
   function AVInit(){
-    const X_CC_Id = 'Your id';
-    const X_CC_Key = 'Your key';
+    // const X_CC_Id = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
+    // const X_CC_Key = 'pE0K2vCPp01I1DBS4NhcfOFo';
     AV.init({ appId:X_CC_Id, appKey:X_CC_Key });
   }
 
@@ -192,6 +192,18 @@ exports.install = function install (Vue) {
         newObject[key].id = oldObject[key].id;
         newObject[key].createdAt = oldObject[key].createdAt;
         newObject[key].updatedAt = oldObject[key].updatedAt;
+        newObject[key].total = oldObject[key].total;
+      }
+    }
+    return newObject;
+  }
+  // 处理文章数据
+  function dealWithArticlesData(oldObject){
+    const newObject = [];
+    for (const key in oldObject) {
+      if (key) {
+        newObject[key].title = oldObject[key]._serverData.title;
+        newObject[key].id = oldObject[key].id;
       }
     }
     return newObject;
@@ -297,6 +309,11 @@ exports.install = function install (Vue) {
       }
     },
     $transDataFromLc:{
+      get (){
+        return transDataFromLc;
+      }
+    },
+    $dealWithArticlesData:{
       get (){
         return transDataFromLc;
       }

@@ -21,8 +21,6 @@
     padding-bottom: 20px;
   }
   .top-nav{
-    /*height: 40px;
-    background: #e4e4e4;*/
     margin-bottom: 0px;
   }
   .footer-container{

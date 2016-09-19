@@ -1,33 +1,33 @@
 export const getArticles = ({
-    dispatch
+  dispatch
 }, data) => {
-    const query = new AV.Query('Articles');
-    query.descending('createdAt');
+  const query = new AV.Query('Articles');
+  query.descending('createdAt');
     query.limit(data.limit); // 最多返回 10 条结果
-        query.skip(data.start);
+    query.skip(data.start);
     query.find().then(function(results) {
-        dispatch('getArticles', results);
+      dispatch('getArticles', results);
     }, function(error) {});
-};
+  };
 
-export const addArticle = ({
+  export const addArticle = ({
     dispatch
-}, data) => {
+  }, data) => {
     const Article = AV.Object.extend('Articles');
     const addarticle = new Article();
     addarticle.save({
-        title: data.title,
-        content: data.content,
-        tag: data.tag,
-        state: data.state
+      title: data.title,
+      content: data.content,
+      tag: data.tag,
+      state: data.state
     }).then(function(object) {
-        dispatch('addArticle', object);
+      dispatch('addArticle', object);
     });
-};
+  };
 
-export const getArticleById = ({
+  export const getArticleById = ({
     dispatch
-}, id) => {
+  }, id) => {
     var query = new AV.Query('Articles');
     query.get(id).then(function(result) {
         // 成功获得实例
@@ -40,7 +40,18 @@ export const getArticleById = ({
         data.createdAt = result.createdAt;
         data.updatedAt = result.updatedAt;
         dispatch('getArticleById', data);
-    }, function(error) {
+      }, function(error) {
         console.log(error);
+      });
+  };
+
+  export const getArticleCount = ({
+    dispatch
+  }, data) => {
+    const query = new AV.Query('Articles');
+    // query.equalTo('state', 1);
+    query.count().then(function (count) {
+      dispatch('getArticleCount', count);
+    }, function (error) {
     });
-};
+  };
