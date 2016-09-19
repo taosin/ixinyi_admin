@@ -1,6 +1,7 @@
 <!-- 博客页 -->
 <template>
 	<div class="blogs">
+		<loading class="loading" v-show="show"></loading>
 		<div class="main">
 			<div class="blog" v-for="article in articles">
 				<div class="title">
@@ -30,10 +31,12 @@
 // import * from './../../components/*';
 import './../../static/css/blogs.scss';
 import { getArticles, getArticleCount } from './../service/article';
+import loading from './../components/loading';
 const marked = require('./../../static/js/marked.min.js');
 export default{
 	components:{
         // *
+        loading
     },
     vuex:{
     	getters:{
@@ -53,7 +56,8 @@ export default{
     		articles:[],
     		start:0,
     		limit:5,
-    		currentStart:0
+    		currentStart:0,
+    		show:false
     	};
     },
     attached(){
@@ -62,10 +66,12 @@ export default{
     	data.limit = this.limit;
     	this.getArticles(data);
     	this.getArticleCount();
+    	this.show = true;
     },
     watch:{
     	datas(){
     		this.articles = this.$deepCopy(this.articles.concat(this.datas));
+    		this.show = false;
     	}
     },
     computed:{

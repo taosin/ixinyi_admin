@@ -7,6 +7,11 @@
 	color: #373a3c;
 	line-height: 2;
 	padding-top: 50px;
+	.loading{
+		position: fixed;
+		margin: 0 auto;
+		width: 100%;
+	}
 	.main{
 		width: 80%;
 		min-height: 800px;
