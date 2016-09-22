@@ -1,11 +1,11 @@
 <!-- 博客页 -->
 <template>
 	<div class="blogs">
-		<loading class="loading" v-show="show"></loading>
+
 		<div class="main">
 			<div class="blog" v-for="article in articles">
 				<div class="title">
-					<h3><a @click="goDetail(article.id, $index)">{{article.title}}</a></h3>
+					<h3><a @click="goDetail(article.id, $index, article.createdAt)">{{article.title}}</a></h3>
 					<span>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
 				</div>
 				<div class="tags">
@@ -16,10 +16,11 @@
 					<div v-html="article.content"></div>
 				</div>
 				<div class="read">
-					<a @click="goDetail(article.id, $index)">阅读全文</a>
+					<a @click="goDetail(article.id, $index, article.createdAt)">阅读全文</a>
 				</div>
 			</div>
 		</div>
+		<loading class="loading" v-show="show"></loading>
 		<!-- 加载更多 -->
 		<div class="loadmore">
 			<!-- <div> -->
@@ -78,8 +79,8 @@ export default{
     },
     methods:{
     	// 跳转到详情页
-    	goDetail(id, index){
-    		const url = '/index/blog/'+id;
+    	goDetail(id, index, date){
+    		const url = '/index/blog/'+ index + '/' + id +'/'+this.$formatDate(date, 'yyyy-MM-dd');
     		window.router.go({
     			path:url
     		});

@@ -6,8 +6,8 @@
 				<h3><a>{{article.title}}</a></h3>
 			</div>
 			<div class="date">
-				<span>发布于：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>｜
-				<span>标签：{{article.tag}}</span>
+				<span>{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>｜
+				<span>{{article.tag}}</span>
 			</div>
 		</div>
 		<div class="main">

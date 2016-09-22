@@ -12,8 +12,24 @@
 		margin: 0 auto;
 		width: 100%;
 	}
+	
+	@media (max-width: 500px) {
+		.main{
+			width: 100%;
+		}
+		.content{
+			display: none;
+		}
+	}
+	@media (min-width: 501px) {
+		.main{
+			width: 80%;
+		}
+		.content{
+			display: block;
+		}
+	}
 	.main{
-		width: 80%;
 		min-height: 800px;
 		margin: 0 auto;
 		margin-bottom: 20px;
@@ -127,9 +143,18 @@
 			}
 		}
 	}
+	@media (max-width: 500px) {
+		.main{
+			width: 100%;
+		}
+	}
+	@media (min-width: 501px) {
+		.main{
+			width: 80%;
+		}
+	}
 	.main{
 		margin: 0 auto;
-		width: 80%;
 		padding: 20px;
 		text-align: left;
 		background: #fff;
