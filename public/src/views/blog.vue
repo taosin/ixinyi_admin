@@ -50,12 +50,14 @@ export default{
     	const id = this.$route.params.aid;
     	console.info(id);
     	this.getArticleById(id);
-
+    	const data = this.$h5getValue('articles-tx');
+    	debugger;
     },
     watch:{
     	result(val){
     		this.article = val;
     		document.title = val.title;
+    		debugger;
     	}
     	// datas(val){
     	// }

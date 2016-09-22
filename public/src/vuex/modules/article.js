@@ -10,8 +10,7 @@ const mutations = {
 	getArticles(allState, articles) {
 		allState.articles =	Vue.prototype.$transDataFromLc(articles);
 		const data = Vue.prototype.$dealWithArticlesData(articles);
-		Vue.prototype.$h5setValue('articles-tx', data);
-		// const datas = JSON.parse(Vue.prototype.$h5getValue('articles-tx'));
+		Vue.prototype.$h5setValue('articles-tx', JSON.stringify(data));
 	},
 	addArticle(allState, result) {
 		allState.addArticleResult = result;
