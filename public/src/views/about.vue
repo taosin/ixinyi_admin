@@ -8,7 +8,7 @@
 			<p>天秤，90后, 前端工程师，为了成为全栈而努力者</p>
 		</div>
 		<div class="icon">
-			<!-- <a><img src=""></a> -->
+			<a href="https://github.com/taosin" alt="github"><img src="http://blog.xinsay.cn/githubs.jpg"></a>
 		</div>
 	</div>
 </template>
