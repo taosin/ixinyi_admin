@@ -55,9 +55,9 @@ module.exports = merge(baseWebpackConfig, {
     new AliyunossWebpackPlugin({
       buildPath: __dirname + '/../dist',
       region: 'oss-cn-shanghai',
-      accessKeyId: 'vlWuDFoE4l20P5VA',
-      accessKeySecret: 'FydkaJWzYpAIJnIqvMTcvcA2kQNReL',
-      bucket: 'taoxindetest',
+      accessKeyId: 'yourkeyid',
+      accessKeySecret: 'yourkeysecret',
+      bucket: 'yourbucket',
       deleteAll: true,
       getObjectHeaders: function(filename) {
         return {
