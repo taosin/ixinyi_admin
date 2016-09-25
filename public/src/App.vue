@@ -1,7 +1,9 @@
 <template>
     <div>
        <toplayout>
-         <div slot="top_menu" class="top-nav"></div>
+         <div slot="top_menu" class="top-nav">
+             <menu></menu>
+         </div>
         </toplayout>
      <router-view slot="top_container" class="view" transition="expand" transition-mode="out-in"></router-view>
     </div>
@@ -11,10 +13,12 @@
 
 <script>
     import toplayout from './components/toplayout.vue';
+    import menu from './views/menu.vue';
     import store from './vuex/store';
     module.exports = {
         components:{
-           toplayout
+           toplayout,
+           menu
         },
         store,
         ready(){

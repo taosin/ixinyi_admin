@@ -37,8 +37,8 @@ Vue.use(require('./ext/vue_ext.js'));
 
 router.map({
     '/': {
-        name: 'index',
-        component: index
+        name: 'index/blogs',
+        component: blogs
     },
     '/index':{
         name:'index',

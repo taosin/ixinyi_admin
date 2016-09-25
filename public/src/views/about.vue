@@ -1,9 +1,37 @@
 <template>
 	<div class="about-container">
-		<h4>About Me</h4>
-		<p>Hey, it's me, my name is Taoxin,this is my wife: Xinyi. Okay ,she is very beautiful!!!</p>
+		<div class="top">
+			<p><img src="http://blog.xinsay.cn/luffy.jpg"></p>
+			<label>幸运女神在微笑</label>
+		</div>
+		<div class="info">
+			<p>天秤，90后, 前端工程师，为了成为全栈而努力者</p>
+		</div>
+		<div class="icon">
+			<!-- <a><img src=""></a> -->
+		</div>
 	</div>
 </template>
 <style type="text/css">
 	
 </style>
+<script>
+	import './../../static/css/about.scss';
+	export default{
+		components:{
+        // *
+    },
+    data(){
+    	return{
+    	};
+    },
+    ready(){
+    },
+    watch:{
+    },
+    computed:{
+    },
+    methods:{
+    }
+};
+</script>

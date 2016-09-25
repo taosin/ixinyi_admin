@@ -33,7 +33,6 @@
         },
         watch:{
             result(val){
-                debugger;
             }
         },
         vuex: {

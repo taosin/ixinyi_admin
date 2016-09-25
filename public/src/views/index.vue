@@ -3,7 +3,7 @@
 	<div>
 		<toplayout>
 			<div slot="top_menu" >
-				<menu></menu>
+				<!-- <menu></menu> -->
 			</div>
 			<div slot="top_container">
 				<router-view class="view" transition="expand" transition-mode="out-in"></router-view>

@@ -1,0 +1,28 @@
+.about-container{
+	width: 100%;
+	text-align: center;
+	margin-top: 150px;
+	.top{
+		width: 220px;
+		height: 100px;
+		background: #333;
+		margin: 0 auto;
+		opacity: 1;
+		color: #fff;
+		padding-top: 10px;
+		font-size: 18px;
+		img{
+			width: 50px;
+			border-radius: 50%;
+		}
+		label{
+			clear: both;
+		}
+	}
+	.info{
+		margin-top: 10px;
+		p{
+			font-size: 16px;
+		}
+	}
+}

@@ -9,6 +9,8 @@
 				</div>
 				<div class="tags">
 					<span>标签：</span>
+					<div class="icon">
+					</div>
 					<a v-if="article.tag">{{article.tag}}</a>
 				</div>
 				<div class="content">

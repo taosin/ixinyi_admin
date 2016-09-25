@@ -14,12 +14,12 @@
 			</div>
 		</div>
 		<div class="bov">
-			<div class="pre">
+			<!-- <div class="pre">
 				<a @click="forward('pre')">上一个文章</a>
 			</div>
 			<div class="next">
 				<a @click="forward('next')">下一个文章</a>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>

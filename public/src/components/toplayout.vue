@@ -16,7 +16,6 @@
 <style type="text/css">
   .main-container .view{
     text-align: center;
-    margin-top: 100px;
     background: url('http://blog.xinsay.cn/bk.png');
     padding-bottom: 20px;
   }
