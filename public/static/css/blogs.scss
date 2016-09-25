@@ -41,7 +41,7 @@
 			.title{
 				// border-bottom: 1px solid;
 				height: 70px;
-				h3{
+				p{
 					a{
 						color: #818a91;
 						cursor:pointer;
@@ -58,6 +58,7 @@
 				}
 			}
 			.tags{
+				clear: both;
 				border-bottom: 1px solid #373a3c;
 				span{
 					float: left;
@@ -99,6 +100,7 @@
 				}
 			}
 			.content{
+				clear: both;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				height: 160px
@@ -143,6 +145,7 @@
 	padding-top: 20px;
 	width: 100%;
 	.top{
+		margin-top: 100px;
 		.title{
 			a{
 				color: #818a91;

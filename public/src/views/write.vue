@@ -33,6 +33,7 @@
         },
         watch:{
             result(val){
+                alert('success');
             }
         },
         vuex: {

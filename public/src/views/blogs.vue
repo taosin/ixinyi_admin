@@ -1,10 +1,10 @@
 <template>
 	<div class="blogs">
 
-		<div class="main">
-			<div class="blog" v-for="article in articles">
+		<div class="main" >
+			<div class="blog" v-if="articles" v-for="article in articles">
 				<div class="title">
-					<h3><a @click="goDetail(article.id, $index, article.createdAt)">{{article.title}}</a></h3>
+					<p><a @click="goDetail(article.id, $index, article.createdAt)">{{article.title}}</a></p>
 					<span>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
 				</div>
 				<div class="tags">
