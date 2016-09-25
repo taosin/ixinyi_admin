@@ -1,4 +1,3 @@
-<!-- 博客页 -->
 <template>
 	<div class="blogs">
 
@@ -20,7 +19,6 @@
 				</div>
 			</div>
 		</div>
-		<loading class="loading" v-show="show"></loading>
 		<!-- 加载更多 -->
 		<div class="loadmore">
 			<!-- <div> -->
@@ -32,12 +30,10 @@
 // import * from './../../components/*';
 import './../../static/css/blogs.scss';
 import { getArticles, getArticleCount } from './../service/article';
-import loading from './../components/loading';
 const marked = require('./../../static/js/marked.min.js');
 export default{
 	components:{
         // *
-        loading
     },
     vuex:{
     	getters:{

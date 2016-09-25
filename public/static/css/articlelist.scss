@@ -1,0 +1,25 @@
+.article_list{
+	padding: 20px;
+	text-align: center;
+	.content{
+		width: 98%;
+		margin: 30px auto;
+
+		.table {
+			border: none;
+			th{
+				background: #eee;
+				text-align: center;
+				border: none;
+				border-bottom: 1px solid;
+			}
+			td{
+				height: 40px;
+				padding: 10px;
+			}
+		}
+	}
+	.pagination{
+		width: 100%;
+	}	
+}

@@ -51,7 +51,6 @@
         methods:{
         // 发布文章
         publish(){
-            alert(111);
             if(!this.title || !this.tag || !this.content){
                 return;
             }

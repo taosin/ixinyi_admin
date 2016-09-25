@@ -1,4 +1,3 @@
-<!-- 文章详情页 -->
 <template>
 	<div class="blog">
 		<div class="top">
@@ -26,11 +25,9 @@
 </template>
 <script>
 	import './../../static/css/blogs.scss';
-// import * from './../../components/*';
 import { getArticleById } from './../service/article';
 export default{
 	components:{
-        // *
     },
     data(){
     	return{
@@ -50,17 +47,12 @@ export default{
     	const id = this.$route.params.aid;
     	console.info(id);
     	this.getArticleById(id);
-    	const data = this.$h5getValue('articles-tx');
-    	debugger;
     },
     watch:{
     	result(val){
     		this.article = val;
     		document.title = val.title;
-    		debugger;
     	}
-    	// datas(val){
-    	// }
     },
     computed:{
     },

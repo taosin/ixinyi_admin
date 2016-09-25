@@ -5,6 +5,8 @@
         </toplayout>
      <router-view slot="top_container" class="view" transition="expand" transition-mode="out-in"></router-view>
     </div>
+    <div slot="top_footer">
+    </div>
 </template>
 
 <script>
