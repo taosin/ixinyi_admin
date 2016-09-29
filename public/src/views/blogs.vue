@@ -9,7 +9,7 @@
 				</div>
 				<div class="tags">
 					<span>标签：</span>
-					<div class="icon">
+					<div class="icon" :style="{ background: this.transeColor(article.tag)}">
 					</div>
 					<a v-if="article.tag">{{article.tag}}</a>
 				</div>
@@ -93,7 +93,20 @@ export default{
     		data.start = this.start;
     		data.limit = this.limit;
     		this.getArticles(data);
-    	}
+    	},
+        // 根据标签转换颜色
+        transeColor(tag){
+            switch(tag) {
+                case 'vue':
+                    return '#42b983';
+                case 'javascript':
+                    return 'red';
+                case 'Hexo':
+                    return '#ddd';
+                default:
+                    return 'orange';
+            }
+        }
     }
 };
 </script>
