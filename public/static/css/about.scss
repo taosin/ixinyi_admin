@@ -25,4 +25,12 @@
 			font-size: 16px;
 		}
 	}
+	.icon{
+		img:hover{
+			border-radius: 50%;
+			border: 2px solid #ddd;
+			width: 100px;
+			height: 100px;
+		}
+	}
 }

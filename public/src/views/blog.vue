@@ -20,54 +20,57 @@
 			<div class="next">
 				<a @click="forward('next')">下一个文章</a>
 			</div> -->
-		</div>
-	</div>
+            <span id="busuanzi_container_page_pv">
+            阅读<span id="busuanzi_value_page_pv"></span>次
+          </span>
+      </div>
+  </div>
 </template>
 <script>
 	import './../../static/css/blogs.scss';
-import { getArticleById } from './../service/article';
-export default{
-	components:{
-    },
-    data(){
-    	return{
-    		article:{}
-    	};
-    },
-    vuex:{
-    	getters:{
-    		result: state => state.article,
-    		datas: state => state.articles
-    	},
-    	actions:{
-    		getArticleById
-    	}
-    },
-    attached(){
-    	const id = this.$route.params.aid;
-    	console.info(id);
-    	this.getArticleById(id);
-    },
-    watch:{
-    	result(val){
-    		this.article = val;
-    		document.title = val.title;
-    	}
-    },
-    computed:{
-    },
-    methods:{
-    	forward(type){
-    		switch(type) {
-    			case 'pre':
-    				
-    				break;
-    			case 'type':
-    				
-    				break;
-    			default:
-    		}
-    	}
-    }
+    import { getArticleById } from './../service/article';
+    export default{
+       components:{
+       },
+       data(){
+           return{
+              article:{}
+          };
+      },
+      vuex:{
+       getters:{
+          result: state => state.article,
+          datas: state => state.articles
+      },
+      actions:{
+          getArticleById
+      }
+  },
+  attached(){
+   const id = this.$route.params.aid;
+   console.info(id);
+   this.getArticleById(id);
+},
+watch:{
+   result(val){
+      this.article = val;
+      document.title = val.title;
+  }
+},
+computed:{
+},
+methods:{
+   forward(type){
+      switch(type) {
+         case 'pre':
+
+         break;
+         case 'type':
+
+         break;
+         default:
+     }
+ }
+}
 };
 </script>
