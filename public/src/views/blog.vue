@@ -6,23 +6,24 @@
 			</div>
 			<div class="date">
 				<span>{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>｜
-				<span>{{article.tag}}</span>
-			</div>
-		</div>
-		<div class="main">
-			<div v-html="article.content" class="content">
-			</div>
-		</div>
-		<div class="bov">
+				<span>{{article.tag}}</span>｜
+                <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </div>
+        </div>
+        <div class="main">
+         <div v-html="article.content" class="content">
+         </div>
+     </div>
+     <div class="bov">
 			<!-- <div class="pre">
 				<a @click="forward('pre')">上一个文章</a>
 			</div>
 			<div class="next">
 				<a @click="forward('next')">下一个文章</a>
 			</div> -->
-            <span id="busuanzi_container_page_pv">
-            阅读<span id="busuanzi_value_page_pv"></span>次
-          </span>
+
       </div>
   </div>
 </template>
@@ -30,47 +31,47 @@
 	import './../../static/css/blogs.scss';
     import { getArticleById } from './../service/article';
     export default{
-       components:{
-       },
-       data(){
-           return{
-              article:{}
-          };
-      },
-      vuex:{
-       getters:{
-          result: state => state.article,
-          datas: state => state.articles
-      },
-      actions:{
-          getArticleById
-      }
+     components:{
+     },
+     data(){
+         return{
+          article:{}
+      };
   },
-  attached(){
-   const id = this.$route.params.aid;
-   console.info(id);
-   this.getArticleById(id);
+  vuex:{
+     getters:{
+      result: state => state.article,
+      datas: state => state.articles
+  },
+  actions:{
+      getArticleById
+  }
+},
+attached(){
+ const id = this.$route.params.aid;
+ console.info(id);
+ this.getArticleById(id);
 },
 watch:{
-   result(val){
-      this.article = val;
-      document.title = val.title;
-  }
+ result(val){
+  this.article = val;
+  document.title = val.title;
+}
 },
 computed:{
 },
 methods:{
-   forward(type){
-      switch(type) {
-         case 'pre':
+ forward(type){
+  switch(type) {
+   case 'pre':
 
-         break;
-         case 'type':
+   break;
+   case 'type':
 
-         break;
-         default:
-     }
- }
+   break;
+   default:
+}
+}
 }
 };
 </script>
