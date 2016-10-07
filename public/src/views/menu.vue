@@ -10,8 +10,8 @@
 					<li><a href="#/index/blogs">Home</a></li>
 					<!-- <li><a href="#/index/techs">技术</a></li> -->
 					<!-- <li><a href="#/index/life">生活</a></li> -->
+					<li><a href="#/index/timeline">Timeline</a></li>
 					<li><a href="#/index/about">About</a></li>
-					<!-- <li><a>时间轴</a></li> -->
 				</ul>
 			</div>
 		</div>

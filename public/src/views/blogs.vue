@@ -57,7 +57,7 @@ export default{
     	return{
     		articles:[],
     		start:0,
-    		limit:5,
+    		limit:5,  
     		currentStart:0,
     		show:true,
     	};

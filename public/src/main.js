@@ -18,6 +18,7 @@ import life from './views/life.vue';
 import blogs from './views/blogs.vue';
 import blog from './views/blog.vue';
 import articlelist from './views/articlelist.vue';
+import timeline from './views/timeline.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -67,6 +68,9 @@ router.map({
             },
             '/blog/:index/:aid/:date':{
                 component:blog
+            },
+            '/timeline':{
+                component:timeline
             }
             
         }

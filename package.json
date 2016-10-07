@@ -1,9 +1,9 @@
 {
   "name": "node-web",
   "version": "0.1.1",
-  "description": "为了快速搭建node的服务器而制作的原型",
-  "author": "hades",
-  "homepage": "http://www.ihades.me",
+  "description": "个人博客",
+  "author": "imocco",
+  "homepage": "iamtaoxin.com",
   "repository": {
     "type": "git",
     "url": ""
