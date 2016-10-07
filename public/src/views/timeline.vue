@@ -23,6 +23,7 @@
 		<div class="bov">
 			<a @click="loadMore" v-if="articles.length < total">查看更多</a>
 		</div>
+		<!-- <input type="file" v-model="file" accept="image/gif, image/jpeg, image/png" id="fileinput"> -->
 	</div>
 </template>
 <script>
@@ -47,6 +48,7 @@
 				start:0,
 				limit:10,  
 				currentStart:0,
+				file:''
 			};
 		},
 		attached(){
@@ -61,6 +63,19 @@
 			datas(){
 				this.articles = this.$deepCopy(this.articles.concat(this.datas));
 				this.show = false;
+			},
+			file(){
+				var uploadFormDom = document.getElementById('fileinput');
+				var file = uploadFormDom.files[0];
+      			var name = file.name;
+				var avFile = new AV.File(name, file);
+     			avFile.save().then(function(obj) {
+        			// 数据保存成功
+        			console.log(obj.url(), 'success+++++++++++++++++');
+      			}, function(error) {
+        			// 数据保存失败
+        			console.log(error, 'error-------------');
+      			});
 			}
 		},
 		computed:{
