@@ -1,8 +1,8 @@
 <!-- loading页面 -->
 <template>
-	<div>
+	<div v-show="show">
 		<!-- <div class="sk-rotating-plane"></div> -->
-		<div class="sk-wave" v-show="show">
+		<div class="sk-wave">
 			<div class="sk-rect sk-rect1"></div>
 			<div class="sk-rect sk-rect2"></div>
 			<div class="sk-rect sk-rect3"></div>
@@ -13,9 +13,9 @@
 </template>
 <script type="text/javascript">
 	export default{
+		props:['show'],
 		data(){
 			return{
-				show:window.showLoading
 			};
 		}
 	};
@@ -53,7 +53,6 @@
 
 										.sk-wave {
 											margin: 40px auto;
-											width: 50px;
 											height: 40px;
 											text-align: center;
 											font-size: 10px; }

@@ -2,6 +2,9 @@
 	<div class="blogs">
 
 		<div class="main" >
+            <div>
+                <loading :show="show"></loading>
+            </div>
 			<div class="blog" v-if="articles" v-for="article in articles">
 				<div class="title">
 					<p><a @click="goDetail(article.id, $index, article.createdAt)">{{article.title}}</a></p>
@@ -29,13 +32,13 @@
 	</div>
 </template>
 <script>
-// import * from './../../components/*';
+import loading from './../components/loading.vue';
 import './../../static/css/blogs.scss';
 import { getArticles, getArticleCount } from './../service/article';
 const marked = require('./../../static/js/marked.min.js');
 export default{
 	components:{
-        // *
+        loading
     },
     vuex:{
     	getters:{
@@ -56,7 +59,7 @@ export default{
     		start:0,
     		limit:5,
     		currentStart:0,
-    		show:false
+    		show:true,
     	};
     },
     attached(){

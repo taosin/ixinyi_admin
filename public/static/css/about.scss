@@ -2,6 +2,7 @@
 	width: 100%;
 	text-align: center;
 	margin-top: 150px;
+	height: 500px;
 	.top{
 		width: 220px;
 		height: 100px;
@@ -18,6 +19,9 @@
 		label{
 			clear: both;
 		}
+	}
+	.top:hover{
+		opacity: .8;
 	}
 	.info{
 		margin-top: 10px;

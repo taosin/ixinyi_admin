@@ -13,17 +13,16 @@
             </div>
         </div>
         <div class="main">
-         <div v-html="article.content" class="content">
-         </div>
-     </div>
-     <div class="bov">
+           <div v-html="article.content" class="content">
+           </div>
+       </div>
+       <div class="bov">
 			<!-- <div class="pre">
 				<a @click="forward('pre')">上一个文章</a>
 			</div>
 			<div class="next">
 				<a @click="forward('next')">下一个文章</a>
 			</div> -->
-
       </div>
   </div>
 </template>
@@ -31,47 +30,46 @@
 	import './../../static/css/blogs.scss';
     import { getArticleById } from './../service/article';
     export default{
-     components:{
-     },
-     data(){
-         return{
-          article:{}
-      };
+       components:{
+       },
+       data(){
+           return{
+              article:{}
+          };
+      },
+      vuex:{
+       getters:{
+          result: state => state.article,
+          datas: state => state.articles
+      },
+      actions:{
+          getArticleById
+      }
   },
-  vuex:{
-     getters:{
-      result: state => state.article,
-      datas: state => state.articles
-  },
-  actions:{
-      getArticleById
-  }
-},
-attached(){
- const id = this.$route.params.aid;
- console.info(id);
- this.getArticleById(id);
+  attached(){
+   const id = this.$route.params.aid;
+   console.info(id);
+   this.getArticleById(id);
 },
 watch:{
- result(val){
-  this.article = val;
-  document.title = val.title;
-}
+   result(val){
+      this.article = val;
+      document.title = val.title;
+  }
 },
 computed:{
 },
 methods:{
- forward(type){
-  switch(type) {
-   case 'pre':
+   forward(type){
+      switch(type) {
+         case 'pre':
 
-   break;
-   case 'type':
-
-   break;
-   default:
-}
-}
+         break;
+         case 'type':
+         break;
+         default:
+     }
+ }
 }
 };
 </script>
