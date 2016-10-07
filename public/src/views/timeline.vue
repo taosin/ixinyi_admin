@@ -27,12 +27,9 @@
 </template>
 <script>
 	import './../../static/css/timeline.scss';
-	// import { Timeline, TimelineItem } from 'iview';
 	import { getArticles, getArticleCount } from './../service/article';
 	export default{
 		components:{
-			// Timeline,
-			// TimelineItem
 		},
 		vuex:{
 			getters:{
