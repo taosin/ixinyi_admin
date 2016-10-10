@@ -1,12 +1,27 @@
 .timeline{
 	width: 100%;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 100px;
 	
 	.top{
-		height: 40px;
+		padding-top: 20px;
+		height: 120px;
 		font-size: 18px;
 		color: #818a91;
+		.search{
+			margin-top: 10px;
+			clear: both;
+			input{
+				border-radius: 20px;
+				// border: none;
+				border: 2px solid #dfdfdf;
+				padding: 5px 20px;
+			}
+			input:focus{
+				outline: none;
+				border: 2px solid #333;
+			}
+		}
 	}
 	.main{
 		// border: 1px solid;

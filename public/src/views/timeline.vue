@@ -5,6 +5,9 @@
 			<div class="tip">
 				共{{total}}篇文章
 			</div>
+			<div class="search">
+				<input type="text" v-model="search">
+			</div>
 		</div>
 		<div class="main">
 			<ul>

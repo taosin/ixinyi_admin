@@ -24,6 +24,13 @@
 			return{
 				logo:'http://blog.xinsay.cn/luffy.jpg'
 			};
+		},
+		route:{
+			// data(transition) {
+			// 	window.onScroll = function(){ 
+			// 		debugger;
+			// 	};
+			// }
 		}
 	};
 </script>
