@@ -18,7 +18,7 @@
 						<div class="timeline-createtime">
 							{{this.$formatDate(article.createdAt, 'yyyy-MM-dd')}}
 						</div>
-						<label>{{article.title}}</label>
+						<a @click="goDetail(article.id, $index, article.createdAt)"><label>{{article.title}}</label></a>
 					</div>
 				</li>
 			</ul>
@@ -70,15 +70,15 @@
 			file(){
 				var uploadFormDom = document.getElementById('fileinput');
 				var file = uploadFormDom.files[0];
-      			var name = file.name;
+				var name = file.name;
 				var avFile = new AV.File(name, file);
-     			avFile.save().then(function(obj) {
+				avFile.save().then(function(obj) {
         			// 数据保存成功
         			console.log(obj.url(), 'success+++++++++++++++++');
-      			}, function(error) {
+        		}, function(error) {
         			// 数据保存失败
         			console.log(error, 'error-------------');
-      			});
+        		});
 			}
 		},
 		computed:{
@@ -92,6 +92,14 @@
 				data.start = this.start;
 				data.limit = this.limit;
 				this.getArticles(data);
+			},
+			// 跳转到详情页
+			goDetail(id, index, date){
+				const url = '/index/blog/'+ index + '/' + id +'/'+this.$formatDate(date, 'yyyy-MM-dd');
+				window.router.go({
+					path:url
+				});
+				this.$h5setValue('sin-index_tx', index+'');
 			},
 		}
 	};

@@ -16,6 +16,7 @@
 				// border: none;
 				border: 2px solid #dfdfdf;
 				padding: 5px 20px;
+				transition: .6s;
 			}
 			input:focus{
 				outline: none;
@@ -52,9 +53,12 @@
 						color: #818a91;
 
 					}
+					a{
+						cursor: pointer;
 						label{
 							margin-left: 30px;
 						}
+					}
 				}
 			}
 			li:last-child{
