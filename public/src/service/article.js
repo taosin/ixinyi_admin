@@ -55,3 +55,17 @@ export const getArticles = ({
     }, function (error) {
     });
   };
+
+
+  export const searchArticles = ({
+  dispatch
+}, data) => {
+  const query = new AV.Query('Articles');
+  query.descending('createdAt');
+    query.limit(data.limit); // 最多返回 10 条结果
+    query.skip(data.start);
+     query.contains('title',data.title);
+    query.find().then(function(results) {
+      dispatch('searchArticles', results);
+    }, function(error) {});
+  };

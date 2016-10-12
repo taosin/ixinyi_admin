@@ -6,7 +6,7 @@
 				共{{total}}篇文章
 			</div>
 			<div class="search">
-				<input type="text" v-model="search">
+				<input type="text" v-model="search" @blur="doSearch">
 			</div>
 		</div>
 		<div class="main">
@@ -31,18 +31,20 @@
 </template>
 <script>
 	import './../../static/css/timeline.scss';
-	import { getArticles, getArticleCount } from './../service/article';
+	import { getArticles, getArticleCount, searchArticles } from './../service/article';
 	export default{
 		components:{
 		},
 		vuex:{
 			getters:{
 				datas: state => state.articles,
-				total:state => state.articleCount
+				total:state => state.articleCount,
+				searchResult:state => state.serArticleResult,
 			},
 			actions:{
 				getArticles,
-				getArticleCount
+				getArticleCount,
+				searchArticles
 			}
 		},
 		data(){
@@ -51,7 +53,8 @@
 				start:0,
 				limit:10,  
 				currentStart:0,
-				file:''
+				file:'',
+				search:''
 			};
 		},
 		attached(){
@@ -79,6 +82,11 @@
         			// 数据保存失败
         			console.log(error, 'error-------------');
         		});
+			},
+			searchResult(val){
+				if(val){
+					this.articles = val;
+				}
 			}
 		},
 		computed:{
@@ -101,6 +109,15 @@
 				});
 				this.$h5setValue('sin-index_tx', index+'');
 			},
+			doSearch(){
+				if(this.search){
+					const data = {};
+					data.start = this.start;
+					data.limit = this.limit;
+					data.title = this.search;
+					this.searchArticles(data);
+				}
+			}
 		}
 	};
 </script>
