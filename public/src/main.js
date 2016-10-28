@@ -19,6 +19,7 @@ import blogs from './views/blogs.vue';
 import blog from './views/blog.vue';
 import articlelist from './views/articlelist.vue';
 import timeline from './views/timeline.vue';
+import websites from './views/websites.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -71,6 +72,9 @@ router.map({
             },
             '/timeline':{
                 component:timeline
+            },
+            '/websites':{
+                component:websites
             }
             
         }
