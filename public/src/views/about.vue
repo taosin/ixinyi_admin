@@ -5,11 +5,12 @@
 			<label>幸运女神在微笑</label>
 		</div>
 		<div class="info">
-			<p>天秤，90后, 前端工程师，为了成为全栈而努力者</p>
+			<p>天秤，90后, 前端工程师</p>
 		</div>
 		<div class="icon">
 			<a href="https://github.com/taosin" alt="github"><img src="http://blog.xinsay.cn/githubs.jpg"></a>
 		</div>
+		<!-- <input type="file" capture="camera" accept="image/*"> -->
 	</div>
 </template>
 <style type="text/css">
