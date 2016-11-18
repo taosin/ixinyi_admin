@@ -20,6 +20,7 @@ import blog from './views/blog.vue';
 import articlelist from './views/articlelist.vue';
 import timeline from './views/timeline.vue';
 import websites from './views/websites.vue';
+import readline from './views/readLine.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -75,6 +76,9 @@ router.map({
             },
             '/websites':{
                 component:websites
+            },
+            '/readline':{
+                component:readline
             }
             
         }

@@ -3,7 +3,9 @@ const state = {
 	addArticleResult: [],
 	article:[],
 	articleCount:0,
-	serArticleResult:[]
+	serArticleResult:[],
+	readLineDatas:[],
+	readLineDates:[]
 };
 
 // mutations
@@ -22,6 +24,31 @@ const mutations = {
 	},
 	searchArticles(allState, result) {
 		allState.serArticleResult = Vue.prototype.$transDataFromLc(result);
+	},
+	getReadInfos(allState, result){
+		// for(let i in result){
+		// 	const date = Vue.prototype.$formatDate(result[i].createdAt, 'yyyy-MM-dd');
+		// }
+		const keys = {};
+		const dates = [];
+		const values = {};
+		for (let i = result.length-1; i >= 0; i--) {
+			const key = Vue.prototype.$formatDate(result[i].createdAt, 'yyyy-MM-dd');
+			const value = keys[key];
+			if (!value) {
+				keys[key]=key;
+				dates.push(key);
+				values[key] = [];
+				values[key].push(result[i]);
+			} else {
+				values[key].push(result[i]);
+			}
+		}
+		const keyAttr = Object.keys(keys).sort(function(a, b) {
+			return new Date(b) - new Date(a);
+		});
+		allState.readLineDatas = values;
+		allState.readLineDates = keyAttr;
 	}
 
 };

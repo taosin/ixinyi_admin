@@ -177,8 +177,8 @@ exports.install = function install (Vue) {
   };
 
   function AVInit(){
-    // const X_CC_Id = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
-    // const X_CC_Key = 'pE0K2vCPp01I1DBS4NhcfOFo';
+    const X_CC_Id = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
+    const X_CC_Key = 'pE0K2vCPp01I1DBS4NhcfOFo';
     AV.init({ appId:X_CC_Id, appKey:X_CC_Key });
   }
 
@@ -200,6 +200,7 @@ exports.install = function install (Vue) {
   // 处理文章数据
   function dealWithArticlesData(oldObject){
     const newObject = [];
+    oldObject = JSON.stringify(oldObject);
     for (const key in oldObject) {
       if (key) {
         newObject[key].title = oldObject[key]._serverData.title;
@@ -324,14 +325,16 @@ exports.install = function install (Vue) {
   // 拦截器
   Vue.http.interceptors.push({
     request(request) {
+    window.showLoading = true;
       // TODO
       if (!request.url.match('http')) {
-        request.url = 'http://120.55.90.106/web/1.0' + request.url;
+        request.url = 'https://api.leancloud.cn/1.1/classes/' + request.url;
       }
       return request;
     },
     response(response) {
       // TODO
+      window.showLoading = false;
       if (response.status === 200) {
         return response.data;
       }
