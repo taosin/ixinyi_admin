@@ -177,8 +177,8 @@ exports.install = function install (Vue) {
   };
 
   function AVInit(){
-    const X_CC_Id = 'apLrGX1xumsj3TROPuj41A6z-gzGzoHsz';
-    const X_CC_Key = 'pE0K2vCPp01I1DBS4NhcfOFo';
+    const X_CC_Id = 'yourappid';
+    const X_CC_Key = 'yourappkey';
     AV.init({ appId:X_CC_Id, appKey:X_CC_Key });
   }
 
