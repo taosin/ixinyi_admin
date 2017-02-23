@@ -124,8 +124,12 @@
 			}
 		}
 		.blog:hover{
-			box-shadow: 0 0 5px rgba(0,0,0,.3);
-			opacity: .8;
+			// box-shadow: 0 0 5px rgba(0,0,0,.3);
+			// opacity: .8;
+			transform: translateY(-2%);
+			box-shadow: 1px 4px 10px 2px #CCC;
+			-webkit-box-shadow: 1px 4px 10px 2px #CCC;
+			-webkit-transition: all .4s;
 		}
 	}
 	.loadmore{
