@@ -23,12 +23,9 @@ const mutations = {
 		allState.articleCount = result;
 	},
 	searchArticles(allState, result) {
-		allState.serArticleResult = Vue.prototype.$transDataFromLc(result);
+		allState.serArticleResult = result.data;
 	},
 	getReadInfos(allState, result){
-		// for(let i in result){
-		// 	const date = Vue.prototype.$formatDate(result[i].createdAt, 'yyyy-MM-dd');
-		// }
 		const keys = {};
 		const dates = [];
 		const values = {};

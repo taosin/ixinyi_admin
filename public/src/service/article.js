@@ -2,7 +2,7 @@
 * @Author: iMocco
 * @Date:   2017-03-17 14:41:23
 * @Last Modified by:   iMocco
-* @Last Modified time: 2017-03-17 15:08:07
+* @Last Modified time: 2017-03-20 19:19:34
 */
 export const getArticles = ({
   dispatch
@@ -56,26 +56,19 @@ export const getArticleCount = ({
     dispatch('getArticleCount', result.data);
   });
 };
-//   export const searchArticles = ({
-//     dispatch
-//   }, data) => {
-//     const query = new AV.Query('Articles');
-//     query.descending('createdAt');
-//     query.limit(data.limit); // 最多返回 10 条结果
-//     query.skip(data.start);
-//     query.contains('title',data.title);
-//     query.find().then(function(results) {
-//       dispatch('searchArticles', results);
-//     }, function(error) {});
-//   };
-//   export const getReadInfos = ({
-//     dispatch
-//   }, data) => {
-//     const query = new AV.Query('ReadInfo');
-//     query.descending('createdAt');
-//     // query.limit(data.limit); // 最多返回 10 条结果
-//     // query.skip(data.start);
-//     query.find().then(function(results) {
-//       dispatch('getReadInfos', results);
-//     }, function(error) {});
-//   };
+export const searchArticles = ({
+  dispatch
+}, data) => {
+  Vue.http.get('/queryArticles', data).then((err) => {
+  }, (result) => {
+    dispatch('searchArticles', result);
+  });
+};
+export const getReadInfos = ({
+  dispatch
+}) => {
+  Vue.http.get('/readInfo').then((err) => {
+  }, (result) => {
+    dispatch('getReadInfos', result.data);
+  });
+};
