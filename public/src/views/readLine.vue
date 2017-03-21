@@ -28,14 +28,14 @@
 						<div v-if="$index%2===0" class="col-sm-6 col-md-pull-6" >
 							<p>
 								<ul>
-									<li v-for="read in historys[time]"><a href="{{read._serverData.url}}" target="_blank">{{read._serverData.title}}</a></li>
+									<li v-for="read in historys[time]"><a href="{{read.url}}" target="_blank">{{read.title}}</a></li>
 								</ul>
 							</p>
 						</div>
 						<div v-else class="col-sm-6" style="text-align:left">
 							<p>
 								<ul>
-									<li v-for="read in historys[time]"><a href="{{read._serverData.url}}" target="_blank">{{read._serverData.title}}</a></li>
+									<li v-for="read in historys[time]"><a href="{{read.url}}" target="_blank">{{read.title}}</a></li>
 								</ul>
 							</p>
 						</div>
