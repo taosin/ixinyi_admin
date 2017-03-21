@@ -2,7 +2,7 @@
 * @Author: iMocco
 * @Date:   2017-03-17 14:41:23
 * @Last Modified by:   iMocco
-* @Last Modified time: 2017-03-20 19:19:34
+* @Last Modified time: 2017-03-21 09:51:20
 */
 export const getArticles = ({
   dispatch
@@ -28,25 +28,14 @@ export const getArticles = ({
 //   });
 // };
 
-// export const getArticleById = ({
-//   dispatch
-// }, id) => {
-//   var query = new AV.Query('Articles');
-//   query.get(id).then(function(result) {
-//         // 成功获得实例
-//         const data = {};
-//         data.title = result.get('title');
-//         data.content = result.get('content');
-//         data.tag = result.get('tag');
-//         data.state = result.get('state');
-//         data.id = result.id;
-//         data.createdAt = result.createdAt;
-//         data.updatedAt = result.updatedAt;
-//         dispatch('getArticleById', data);
-//       }, function(error) {
-//         console.log(error);
-//       });
-// };
+export const getArticleById = ({
+  dispatch
+}, data) => {
+  Vue.http.get('/articleById', data).then((err) => {
+  }, (result) => {
+    dispatch('getArticleById', result.data);
+  });
+};
 
 export const getArticleCount = ({
   dispatch

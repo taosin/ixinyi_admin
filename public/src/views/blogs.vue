@@ -7,7 +7,7 @@
             </div>
 			<div class="blog" v-if="articles" v-for="article in articles">
 				<div class="title">
-					<p><a @click="goDetail(article.id, $index, article.createdAt)">{{article.title}}</a></p>
+					<p><a @click="goDetail(article.objectId, $index, article.createdAt)">{{article.title}}</a></p>
 					<span>发布时间：{{this.$formatDate(article.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
 				</div>
 				<div class="tags">
@@ -20,7 +20,7 @@
 					<div v-html="article.content"></div>
 				</div>
 				<div class="read">
-					<a @click="goDetail(article.id, $index, article.createdAt)">阅读全文</a>
+					<a @click="goDetail(article.objectId, $index, article.createdAt)">阅读全文</a>
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,7 @@ export default{
     	return{
     		articles:[],
     		start:0,
-    		limit:5,  
+    		limit:5,
     		currentStart:0,
     		show:true,
     	};
