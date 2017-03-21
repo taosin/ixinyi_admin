@@ -1,6 +1,6 @@
 <!-- 阅读轨迹 -->
 <template>
-	<section class="timeline-1" style="margin-top:80px">
+	<div class="" style="margin-top:30px;" >
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </template>
 <script>
 // import * from './../../components/*';
