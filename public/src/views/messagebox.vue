@@ -19,11 +19,16 @@
       </div>
     </div>
     <div class="msg-list">
-      <ul v-for="data in datas" class="msg-li">
+      <ul v-for="data in datas" class="msg-li" v-if="datas.length >0">
         <li>
           <label>{{data.name}}</label>
           <span>{{this.$formatDate(data.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
           <p>{{data.content}}</p>
+        </li>
+      </ul>
+      <ul v-else>
+        <li>
+          <h4>快来抢沙发吧。。。</h4>
         </li>
       </ul>
     </div>
