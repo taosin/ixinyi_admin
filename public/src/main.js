@@ -21,6 +21,7 @@ import articlelist from './views/articlelist.vue';
 import timeline from './views/timeline.vue';
 import websites from './views/websites.vue';
 import readline from './views/readLine.vue';
+import messagebox from './views/messagebox.vue';
 window.Vue = Vue;
 Vue.use(Router);
 const router = new Router({
@@ -79,6 +80,9 @@ router.map({
             },
             '/readline':{
                 component:readline
+            },
+            '/messagebox':{
+               component:messagebox
             }
             
         }

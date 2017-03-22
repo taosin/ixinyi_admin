@@ -78,3 +78,32 @@ export const getArticles = ({
       dispatch('getReadInfos', results);
     }, function(error) {});
   };
+
+  export const addMsg = ({
+    dispatch
+  }, data) => {
+    const Message = AV.Object.extend('Messages');
+    const addMessage = new Message();
+    addMessage.save({
+      name: data.name,
+      mail: data.mail,
+      website: data.website,
+      type:data.type,
+      content:data.content,
+      state:data.state
+    }).then(function(object) {
+      dispatch('addMsg', object);
+    });
+  };
+
+  export const getMessages = ({
+  dispatch
+}, data) => {
+  const query = new AV.Query('Messages');
+  query.descending('createdAt');
+    query.limit(data.limit);
+    query.skip(data.start);
+    query.find().then(function(results) {
+      dispatch('getMessages', results);
+    }, function(error) {});
+  };

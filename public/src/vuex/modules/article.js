@@ -5,7 +5,9 @@ const state = {
 	articleCount:0,
 	serArticleResult:[],
 	readLineDatas:[],
-	readLineDates:[]
+	readLineDates:[],
+	messages:[],
+	addMessageRel:[]
 };
 
 // mutations
@@ -49,8 +51,13 @@ const mutations = {
 		});
 		allState.readLineDatas = values;
 		allState.readLineDates = keyAttr;
+	},
+	getMessages(allState, messages) {
+		allState.messages =	Vue.prototype.$transDataFromLc(messages);
+	},
+	addMsg(allState, result){
+		allState.addMessageRel = result;
 	}
-
 };
 
 export default {

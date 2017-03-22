@@ -1,0 +1,81 @@
+.messagebox{
+	width: 100%;
+	min-height: 800px;
+	margin-top: 30px;
+	.top{
+		margin-top: 10px;
+	}
+	.main{
+		width: 80%;
+		max-width: 800px;
+		margin: 0 auto;
+
+		.form-group{
+			.textarea{
+				white-space: pre-wrap;
+				word-wrap: break-word;
+				resize: none;
+				font-size: 18px;
+				background: none;
+			}
+			.submit-btn{
+				float: right;
+				padding: 5px 20px;
+				background: #333;
+				color: #fff;
+				cursor: pointer;
+			}
+			.submit-btn:hover{
+				opacity: .6;
+				transition:.5s;
+			}
+		}
+		.message-inputs{
+
+			height: 30px;
+			.message-input:nth-child(1){
+				width: 20%;
+				float: left;
+				margin-right: 5px;
+			}
+			.message-input:nth-child(2){
+				width: 30%;
+				float: left;
+				margin-right: 5px;
+			}
+			.message-input:nth-child(3){
+				width: 48%;
+				float: left;
+			}
+		}
+	}
+	.msg-list{
+		background: #fff;
+		width: 80%;
+		max-width: 800px;
+		margin: 0 auto;
+		margin-top: 80px;
+		transform: translateY(-2%);
+		box-shadow: 1px 4px 10px 2px #CCC;
+		-webkit-box-shadow: 1px 4px 10px 2px #CCC;
+		-webkit-transition: all .4s;
+		padding: 10px 10px 0 10px;
+		word-break:break-all;
+		.msg-li{
+			text-align: left;
+			padding: 0;
+			list-style: none;
+			li{
+				border-bottom: 1px solid #ccc;
+				p{
+					font-size: 14px;
+					padding: 10px;
+				}
+			}
+		}
+	}
+	.msg-list ul li:last-child{
+		// border: none;
+	}
+
+}
