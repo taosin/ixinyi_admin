@@ -26,7 +26,7 @@
           <p>{{data.content}}</p>
         </li>
       </ul>
-      <ul v-else>
+      <ul v-else class="msg-li">
         <li>
           <h4>快来抢沙发吧。。。</h4>
         </li>
