@@ -19,14 +19,14 @@
       </div>
     </div>
     <div class="msg-list">
-      <ul v-for="data in datas" class="msg-li" v-if="datas.length >0">
+      <ul v-for="data in msgs" class="msg-li" v-if="msgs.length >0">
         <li>
           <label>{{data.name}}</label>
           <span>{{this.$formatDate(data.createdAt, 'yyyy-MM-dd hh:mm')}}</span>
           <p>{{data.content}}</p>
         </li>
       </ul>
-      <ul v-else class="msg-li">
+      <ul v-if="msgs.length===0" class="msg-li">
         <li>
           <h4>快来抢沙发吧。。。</h4>
         </li>
@@ -46,7 +46,8 @@
       content:'',
       name:'',
       mail:'',
-      website:''
+      website:'',
+      msgs:[]
     };
   },
   vuex:{
@@ -87,6 +88,9 @@ watch:{
     this.mail = '';
     this.content = '';
     this.website = '';
+  },
+  datas(val){
+    this.msgs = val;
   }
 },
 methods:{
