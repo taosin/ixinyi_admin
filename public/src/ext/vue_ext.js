@@ -176,13 +176,6 @@ exports.install = function install (Vue) {
     return format;
   };
 
-  function AVInit(){
-    const X_CC_Id = 'yourappid';
-    const X_CC_Key = 'yourappkey';
-    AV.init({ appId:X_CC_Id, appKey:X_CC_Key });
-  }
-
-
   // 处理leadcloud中查询出的数据
   function transDataFromLc(oldObject){
     const newObject = [];
@@ -325,10 +318,9 @@ exports.install = function install (Vue) {
   // 拦截器
   Vue.http.interceptors.push({
     request(request) {
-    window.showLoading = true;
-      // TODO
+      window.showLoading = true;
       if (!request.url.match('http')) {
-        request.url = 'https://api.leancloud.cn/1.1/classes/' + request.url;
+        request.url = 'http://localhost:8113' + request.url;
       }
       return request;
     },

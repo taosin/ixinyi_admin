@@ -48,8 +48,10 @@
   },
   attached(){
    const id = this.$route.params.aid;
+   const data = {};
+   data.id = id;
    console.info(id);
-   this.getArticleById(id);
+   this.getArticleById(data);
 },
 watch:{
    result(val){

@@ -13,7 +13,7 @@ const state = {
 // mutations
 const mutations = {
 	getArticles(allState, articles) {
-		allState.articles =	Vue.prototype.$transDataFromLc(articles);
+		allState.articles =	articles;
 	},
 	addArticle(allState, result) {
 		allState.addArticleResult = result;
@@ -25,12 +25,9 @@ const mutations = {
 		allState.articleCount = result;
 	},
 	searchArticles(allState, result) {
-		allState.serArticleResult = Vue.prototype.$transDataFromLc(result);
+		allState.serArticleResult = result.data;
 	},
 	getReadInfos(allState, result){
-		// for(let i in result){
-		// 	const date = Vue.prototype.$formatDate(result[i].createdAt, 'yyyy-MM-dd');
-		// }
 		const keys = {};
 		const dates = [];
 		const values = {};

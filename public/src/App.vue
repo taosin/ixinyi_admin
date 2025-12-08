@@ -1,19 +1,19 @@
 <template>
     <div>
-       <toplayout>
-         <div slot="top_menu" class="top-nav">
-             <menu></menu>
-         </div>
-     </toplayout>
-     <router-view slot="top_container" class="view" transition="expand" transition-mode="out-in"></router-view>
-     <div slot="top_footer" class="top-foot">
-         <span id="busuanzi_container_site_pv">
-             访问量<span id="busuanzi_value_site_pv"></span>
-         </span>|
-         <span id="busuanzi_container_site_uv">
-         访客数<span id="busuanzi_value_site_uv"></span>
-      </span>
-  </div>
+     <toplayout>
+       <div slot="top_menu" class="top-nav">
+           <menu></menu>
+       </div>
+   </toplayout>
+   <router-view slot="top_container" class="view" transition="expand" transition-mode="out-in"></router-view>
+   <div slot="top_footer" class="top-foot">
+       <span id="busuanzi_container_site_pv">
+           访问量<span id="busuanzi_value_site_pv"></span>
+       </span>|
+       <span id="busuanzi_container_site_uv">
+           访客数<span id="busuanzi_value_site_uv"></span>
+       </span>
+   </div>
 </div>
 </template>
 
@@ -23,14 +23,13 @@
     import store from './vuex/store';
     module.exports = {
         components:{
-           toplayout,
-           menu
-       },
-       store,
-       ready(){
-        this.$AVInit();
-    }
-};
+         toplayout,
+         menu
+     },
+     store,
+     ready(){
+     }
+ };
 </script>
 <style type="text/css">
     .top-foot{
@@ -82,7 +81,7 @@
     }
 
     @keyframes expand-out {
-       0% {
+     0% {
         opacity: 1;
     }
     25% {
