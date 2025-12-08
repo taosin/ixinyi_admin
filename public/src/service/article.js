@@ -48,16 +48,40 @@ export const getArticleCount = ({
 export const searchArticles = ({
   dispatch
 }, data) => {
-  Vue.http.get('/queryArticles', data).then((err) => {
-  }, (result) => {
-    dispatch('searchArticles', result);
-  });
-};
-export const getReadInfos = ({
+  const query = new AV.Query('ReadInfo');
+  query.descending('createdAt');
+    // query.limit(data.limit); // 最多返回 10 条结果
+    // query.skip(data.start);
+    query.find().then(function(results) {
+      dispatch('getReadInfos', results);
+    }, function(error) {});
+  };
+
+  export const addMsg = ({
+    dispatch
+  }, data) => {
+    const Message = AV.Object.extend('Messages');
+    const addMessage = new Message();
+    addMessage.save({
+      name: data.name,
+      mail: data.mail,
+      website: data.website,
+      type:data.type,
+      content:data.content,
+      state:data.state
+    }).then(function(object) {
+      dispatch('addMsg', object);
+    });
+  };
+
+  export const getMessages = ({
   dispatch
-}) => {
-  Vue.http.get('/readInfo').then((err) => {
-  }, (result) => {
-    dispatch('getReadInfos', result.data);
-  });
-};
+}, data) => {
+  const query = new AV.Query('Messages');
+  query.descending('createdAt');
+    query.limit(data.limit);
+    query.skip(data.start);
+    query.find().then(function(results) {
+      dispatch('getMessages', results);
+    }, function(error) {});
+  };

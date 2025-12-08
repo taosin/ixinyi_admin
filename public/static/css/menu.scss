@@ -1,5 +1,5 @@
 .menu{
-	position: fixed;
+	// position: fixed;
 	border-top: 2px solid #818a91;
 	top: 0;
 	left: 0;
@@ -47,13 +47,11 @@
 					a{
 						-webkit-transition: all .2s linear;
 						color: #818a91;
-						border-bottom:2px solid #fff;
 					}
 					a:hover,
 					a:focus{
 						text-decoration: none;
 						color: #090a0a;
-						border-bottom:2px solid #818a91;
 					}
 				}
 			}

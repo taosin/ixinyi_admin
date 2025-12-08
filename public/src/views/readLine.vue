@@ -1,6 +1,6 @@
 <!-- 阅读轨迹 -->
 <template>
-	<section class="timeline-1" style="margin-top:80px">
+	<div class="" style="margin-top:30px;" >
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
@@ -27,15 +27,15 @@
 						</div>
 						<div v-if="$index%2===0" class="col-sm-6 col-md-pull-6" >
 							<p>
-								<ul>
-									<li v-for="read in historys[time]"><a href="{{read.url}}" target="_blank">{{read.title}}</a></li>
+								<ul class="readline-li">
+									<li v-for="read in historys[time]"><a href="{{read._serverData.url}}" target="_blank">{{read._serverData.title}}</a></li>
 								</ul>
 							</p>
 						</div>
 						<div v-else class="col-sm-6" style="text-align:left">
 							<p>
-								<ul>
-									<li v-for="read in historys[time]"><a href="{{read.url}}" target="_blank">{{read.title}}</a></li>
+								<ul class="readline-li">
+									<li v-for="read in historys[time]"><a href="{{read._serverData.url}}" target="_blank">{{read._serverData.title}}</a></li>
 								</ul>
 							</p>
 						</div>
@@ -44,37 +44,38 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </template>
 <script>
 // import * from './../../components/*';
+import './../../static/css/theme.scss';
 import { getReadInfos } from './../service/article.js';
 export default{
-    components:{
-    },
-    vuex:{
-    	getters:{
-    		historys: state => state.readLineDatas,
-    		datetime: state => state.readLineDates
-    	},
-    	actions:{
-    		getReadInfos
-    	}
-    },
-    data(){
-        return{
-         };
-    },
-    attached(){
-    	this.getReadInfos();
-    },
-    watch:{
-    	historys(){
+	components:{
+	},
+	vuex:{
+		getters:{
+			historys: state => state.readLineDatas,
+			datetime: state => state.readLineDates
+		},
+		actions:{
+			getReadInfos
+		}
+	},
+	data(){
+		return{
+		};
+	},
+	attached(){
+		this.getReadInfos();
+	},
+	watch:{
+		historys(){
     		// debugger;
     	}
     },
     computed:{
-   },
+    },
     methods:{
     }
 };
